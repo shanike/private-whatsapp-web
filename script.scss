@@ -1,0 +1,80 @@
+/*
+_INFO:
+._3m_Xw = single chat box
+    =>
+    ._3vPI2 = chat-title
+    ._1qB8f = recent message text, in chat box. (recent-msg)
+    .Hy9nV = recent-msg but when searching
+
+.ldL67._2i3T7 #side._1KDb8 = left side of whatsapp web (chat list & the top bar with: profile, status, settings...)
+*/
+
+#chrome_extension_privateWhatsApp__btn {
+    display: inline;
+    background-color: #b0b0b0;
+    margin: 0 10px;
+    border-radius: 5px;
+    padding: 5px;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
+#chrome_extension_privateWhatsApp__btn:hover {
+    opacity: 0.7 !important;
+}
+
+/*************************
+        on hide:
+*************************/
+.ldL67._2i3T7 #side._1KDb8.hide {
+    //_ BUTTON
+    #chrome_extension_privateWhatsApp__btn {
+        opacity: 1;
+    }
+
+    //_ CHATS
+    //: HIDE
+    // chat-title:
+    ._3vPI2 {
+        opacity: 0.2;
+        transition: opacity 0.3s;
+    }
+    // profiles:
+    ._2EU3r {
+        opacity: 0.7;
+        transition: opacity 0.3s;
+    }
+    // emoji:
+    .emoji {
+        display: none;
+    }
+    // recent-msg:
+    ._1qB8f,
+    .Hy9nV {
+        color: transparent;
+        visibility: hidden;
+    }
+
+    //: SHOW on single chat hover
+    ._3m_Xw:hover {
+        // profiles & chat-title
+        ._3vPI2,
+        ._2EU3r {
+            opacity: 1;
+        }
+    }
+    //: SHOW chat-title on chat-box hover
+    &:hover .zoWT4 {
+        color: var(--cell-chat-title-color, var(--primary-strong));
+    }
+    //: SHOW recent-msg (on recent-msg hover)
+    ._1qB8f:hover,
+    .Hy9nV:hover {
+        $original_text_color: var(--cell-chat-secondary-color, var(--secondary));
+        visibility: visible;
+        color: $original_text_color;
+        // emoji
+        .emoji {
+            display: inline-block;
+        }
+    }
+}

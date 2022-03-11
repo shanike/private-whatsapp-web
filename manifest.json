@@ -1,0 +1,29 @@
+{
+    "name": "Private WhatsApp Web",
+    "description": "Hi! this is Shani. this extension hides/reveals whatsapp web chat list content on demand. contact info: shankehat@gmail.com",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://web.whatsapp.com/*"
+            ],
+            "js": [
+                "script.js"
+            ],
+            "css": [
+                "script.css"
+            ]
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ]
+}
