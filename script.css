@@ -1,13 +1,3 @@
-/*
-_INFO:
-._3m_Xw = single chat box
-    =>
-    ._3vPI2 = chat-title
-    ._1qB8f = recent message text, in chat box. (recent-msg)
-    .Hy9nV = recent-msg but when searching
-
-.ldL67._2i3T7 #side._1KDb8 = left side of whatsapp web (chat list & the top bar with: profile, status, settings...)
-*/
 #chrome_extension_privateWhatsApp__btn {
   display: inline;
   background-color: #b0b0b0;
@@ -42,23 +32,20 @@ _INFO:
   transition: opacity 0.3s;
 }
 
-.ldL67._2i3T7 #side._1KDb8.hide .emoji {
-  display: none;
-}
-
 .ldL67._2i3T7 #side._1KDb8.hide ._1qB8f,
 .ldL67._2i3T7 #side._1KDb8.hide .Hy9nV {
   color: transparent;
   visibility: hidden;
 }
 
+.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f .emoji,
+.ldL67._2i3T7 #side._1KDb8.hide .Hy9nV .emoji {
+  display: none;
+}
+
 .ldL67._2i3T7 #side._1KDb8.hide ._3m_Xw:hover ._3vPI2,
 .ldL67._2i3T7 #side._1KDb8.hide ._3m_Xw:hover ._2EU3r {
   opacity: 1;
-}
-
-.ldL67._2i3T7 #side._1KDb8.hide:hover .zoWT4 {
-  color: var(--cell-chat-title-color, var(--primary-strong));
 }
 
 .ldL67._2i3T7 #side._1KDb8.hide ._1qB8f:hover,

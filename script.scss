@@ -21,26 +21,26 @@
     }
 
     //_ CHATS
-    //: HIDE
-    // chat-title:
+    //: HIDE chat-title:
     ._3vPI2 {
         opacity: 0.2;
         transition: opacity 0.3s;
     }
-    // profiles:
+    //: HIDE profiles:
     ._2EU3r {
         opacity: 0.7;
         transition: opacity 0.3s;
     }
-    // emoji:
-    .emoji {
-        display: none;
-    }
-    // recent-msg:
+    //: HIDE recent-msg:
     ._1qB8f,
     .Hy9nV {
         color: transparent;
         visibility: hidden;
+        //: HIDE emoji:
+        // just ones inside recent-msg
+        .emoji {
+            display: none;
+        }
     }
 
     //: SHOW on single chat hover
@@ -50,10 +50,6 @@
         ._2EU3r {
             opacity: 1;
         }
-    }
-    //: SHOW chat-title on chat-box hover
-    &:hover .zoWT4 {
-        color: var(--cell-chat-title-color, var(--primary-strong));
     }
     //: SHOW recent-msg (on recent-msg hover)
     ._1qB8f:hover,
