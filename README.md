@@ -1,5 +1,8 @@
 # Private WhatsApp Web Chat List
 
+> Make sure to notice the different ***branches***:
+> https://github.com/shanike/private-whatsapp-web/branches
+
 **This extension hides/reveals whatsapp-web's chat list content with a click of a button.**
 
 Once you (manually) install this extension and reload your *whatsapp.com* website, you will see a **new button** on the top bar.
