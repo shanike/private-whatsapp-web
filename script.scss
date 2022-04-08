@@ -33,7 +33,7 @@
     }
     //: HIDE recent-msg:
     ._1qB8f,
-    .Hy9nV {
+    ._1qB8f {
         color: transparent;
         visibility: hidden;
         //: HIDE emoji:
@@ -53,7 +53,7 @@
     }
     //: SHOW recent-msg (on recent-msg hover)
     ._1qB8f:hover,
-    .Hy9nV:hover {
+    ._1qB8f:hover {
         $original_text_color: var(--cell-chat-secondary-color, var(--secondary));
         visibility: visible;
         color: $original_text_color;
