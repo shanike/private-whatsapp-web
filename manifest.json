@@ -5,7 +5,8 @@
     "manifest_version": 3,
     "background": {},
     "action": {
-        "default_popup": "popup/popup.html"
+        "default_popup": "popup/popup.html",
+        "default_title": "Private WhatsApp Web -\nClick for options!"
     },
     "content_scripts": [
         {
