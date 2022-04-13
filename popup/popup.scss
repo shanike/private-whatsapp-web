@@ -1,0 +1,21 @@
+#shani--extension-privateWhatsAppWeb {
+    width: max-content;
+    max-width: 350px;
+
+    // .clickable {
+    //     cursor: pointer;
+    // }
+
+    .shani--ul {
+        // @extend .clickable;
+
+        #hide-button {
+            display: flex;
+            flex-direction: row;
+            label {
+                margin-right: 10px;
+            }
+        }
+    }
+
+}
