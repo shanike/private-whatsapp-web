@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://web.whatsapp.com/ -->
+<html
+  class="js serviceworker adownload cssanimations csstransitions webp exiforientation webp-alpha webp-animation webp-lossless"
+  dir="LTR" loc="en" lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>TEST -WhatsApp- TEST</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="google" content="notranslate">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="Quickly send and receive WhatsApp messages right from your computer.">
+  <meta name="og:description" content="Quickly send and receive WhatsApp messages right from your computer.">
+  <meta name="og:url" content="https://web.whatsapp.com/">
+  <meta name="og:title" content="WhatsApp Web">
+  <meta name="og:image" content="https://static.facebook.com/images/whatsapp/www/whatsapp-promo.png">
+  <link rel="apple-touch-icon" sizes="194x194" href="https://web.whatsapp.com/apple-touch-icon.png" type="image/png">
+  <style>
+    #initial_startup {
+      --startup-background: #f0f2f5;
+      --startup-background-rgb: 240, 242, 245;
+      --startup-icon: #bbc5cb;
+      --secondary-lighter: #8696a0;
+      --primary-title: #41525d;
+      --progress-primary: #00c298;
+      --progress-background: #e9edef
+    }
+
+    .dark #initial_startup {
+      --startup-background: #111b21;
+      --startup-background-rgb: 17, 27, 33;
+      --startup-icon: #676f73;
+      --primary-title: rgba(233, 237, 239, 0.88);
+      --secondary-lighter: #667781;
+      --progress-primary: #0b846d;
+      --progress-background: #233138
+    }
+
+    #app,
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      overflow: hidden
+    }
+
+    #app {
+      position: absolute;
+      top: 0;
+      left: 0
+    }
+
+    #initial_startup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      user-select: none;
+      background-color: var(--startup-background)
+    }
+
+    #initial_startup .graphic {
+      margin-top: -40px;
+      color: var(--startup-icon)
+    }
+
+    #initial_startup .graphic .resume-logo {
+      transform: translateX(calc(50% - 52px / 2))
+    }
+
+    #initial_startup .graphic::after {
+      position: relative;
+      top: -100%;
+      left: calc(50% - 72px * 2 - 72px / 2);
+      display: block;
+      width: calc(72px * 3);
+      height: 100%;
+      content: '';
+      background: linear-gradient(to right, rgba(var(--startup-background-rgb), .5) 0, rgba(var(--startup-background-rgb), .5) 33.33%, rgba(var(--startup-background-rgb), 0) 44.1%, rgba(var(--startup-background-rgb), 0) 55.8%, rgba(var(--startup-background-rgb), .5) 66.66%, rgba(var(--startup-background-rgb), .5) 100%);
+      opacity: 1;
+      animation: shimmer 1.5s linear .6s infinite
+    }
+
+    html[dir=rtl] #initial_startup .graphic::after {
+      animation-direction: reverse
+    }
+
+    @keyframes shimmer {
+      from {
+        left: calc(50% - 72px * 2 - 72px / 2)
+      }
+
+      to {
+        left: calc(50% - 72px / 2)
+      }
+    }
+
+    #initial_startup .progress {
+      position: relative;
+      width: 420px;
+      height: 3px;
+      margin-top: 40px
+    }
+
+    #initial_startup .progress progress {
+      vertical-align: top
+    }
+
+    #initial_startup .main {
+      margin-top: 40px;
+      font-size: 17px;
+      color: var(--primary-title)
+    }
+
+    #initial_startup .secondary {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--secondary-lighter)
+    }
+
+    #initial_startup .secondary span {
+      display: inline-block;
+      margin-bottom: 2px;
+      vertical-align: middle
+    }
+
+    progress {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 3px;
+      margin: 0;
+      color: var(--progress-primary);
+      background-color: var(--progress-background);
+      border: none
+    }
+
+    progress[value]::-webkit-progress-bar {
+      background-color: var(--progress-background)
+    }
+
+    progress[value]::-moz-progress-bar,
+    progress[value]::-webkit-progress-value {
+      background-color: var(--progress-primary);
+      transition: width .45s ease
+    }
+  </style>
+  <link href="./WhatsApp_files/stylex-eb78fdbdd5bd2a9416eba5b73efaab1f.css" rel="stylesheet">
+  <link href="./WhatsApp_files/bootstrap_qr-5e33d87ad2944a4ebb36.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./WhatsApp_files/bootstrap_main.e4e23b1d12d8ad892297.css">
+  <style id="asset-style" type="text/css"></style>
+  <style type="text/css" id="a5a3b00f-eb52-45c8-9d33-2cd59da46ccf">
+    .b53f81c7-effd-4e5b-9be6-d68930681041 {
+      position: relative !important;
+      border-radius: 0.2em !important;
+      padding: 0px !important;
+      margin: 0px !important;
+    }
+
+    .acc5b893-f8e8-4e60-94c9-b5c4d205db91 .ssh-close {
+      position: absolute;
+      left: -8px;
+      top: -8px;
+      width: 16px;
+      height: 16px;
+      z-index: 999;
+      border: none;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfACAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH/w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBblCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKBNA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7iJIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAAXkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRByAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRRIkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQcrQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXACTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPENyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJAcaT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgXaPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZD5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2epO6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2qqaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6feeb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYPjGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFostqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuutm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPjthPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofcn8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw33jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgqTXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWFfevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaql+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRSj9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtbYlu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L158Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89HcR/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfyl5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz/GMzLdsAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAeBJREFUeNqMU01rGlEUPW9EUJeR2QyUcZ1uVLrr3zAbpdhfFWphVgUFR1ylNGR04qaIUBQXbaOmoOQHZObJW83H6UZfGq3gWb7LPe/ec88R2CGXyyFJEkRR9A7Ah2q1+t627TcAsNlsnqbT6XcAX7LZ7I98Po/tdguSOMR1s9nkZDJhkiTcI04STiYTNptNArgGACHEUfN9p9N5aYpjKqWolGIcx/q93W4TwP0hyeder8d/EQQBpZSUUjIIglc113UJoGUYBgDgstFo6KLjOPx2e0uSDMOQYRiSJMfjMX3fZ5qmJMl6vU4AlzAMozWfz/XYruvSNE2ORiNNOhgMaFkWfd9nFEUkyfl8TiHEJ5Qrld/75v1vA8+jaZp8/PPIxWLB4sUFPc/TU8U7gcvl8k/Urq6eSVIpRSmlJlktlyzZNu1SiavVSjdLKamUIknWarVnAycghECSJBAAMpkMTqJcqfw6XMG7u2OxWORyueTi4eGVJkcrCCG0iFEU0R8OaVkWB8Phi4g7Tfr9vvaEFhHA20ajTpJM05S+73M8Hh+d8evNDR3H0aT6jNpIrnu2kbrdLgG0DrU5aeXkDCvrMH3chSk+M0yaIp/PI47j/8Z5vV4/zWYzHedCoQApJUji7wAqNGpVYJkfGwAAAABJRU5ErkJggg==") no-repeat border-box;
+      animation-duration: 275ms;
+      animation-timing-function: ease-out;
+      box-shadow: none;
+      animation-name: f304b17d-120e-40c7-8afa-a9330f02251f;
+    }
+
+    .acc5b893-f8e8-4e60-94c9-b5c4d205db91 .ssh-close:hover,
+    .acc5b893-f8e8-4e60-94c9-b5c4d205db91 .ssh-close:focus {
+      background-image: url("data:image/png;base64,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");
+    }
+
+    @media print {
+      .acc5b893-f8e8-4e60-94c9-b5c4d205db91 {
+        box-shadow: unset !important;
+        -webkit-print-color-adjust: exact !important;
+      }
+    }
+
+    @keyframes f304b17d-120e-40c7-8afa-a9330f02251f {
+      0% {
+        opacity: 0;
+        transform: scale(0.6);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes a9515df1-65ca-424d-82da-7c20bc0163cf {
+      100% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+    }
+
+    .acc5b893-f8e8-4e60-94c9-b5c4d205db91 {
+      background-color: rgba(238, 238, 238, 0.8);
+      color: rgb(170, 170, 170);
+      font: inherit;
+      text-shadow: none !important;
+    }
+
+    .default-red-aa94e3d5-ab2f-4205-b74e-18ce31c7c0ce {
+      background-color: rgba(255, 128, 128, 0.8) !important;
+      color: rgb(0, 0, 0) !important;
+    }
+
+    .default-orange-da01945e-1964-4d27-8a6c-3331e1fe7f14 {
+      background-color: rgba(255, 210, 170, 0.8) !important;
+      color: rgb(0, 0, 0) !important;
+    }
+
+    .default-yellow-aaddcf5c-0e41-4f83-8a64-58c91f7c6250 {
+      background-color: rgba(255, 255, 170, 0.8) !important;
+      color: rgb(0, 0, 0) !important;
+    }
+
+    .default-green-c4d41e0a-e40f-4c3f-91ad-2d66481614c2 {
+      background-color: rgba(170, 255, 170, 0.8) !important;
+      color: rgb(0, 0, 0) !important;
+    }
+
+    .default-cyan-f88e8827-e652-4d79-a9d9-f6c8b8ec9e2b {
+      background-color: rgba(170, 255, 255, 0.8) !important;
+      color: rgb(0, 0, 0) !important;
+    }
+
+    .default-purple-c472dcdb-f2b8-41ab-bb1e-2fb293df172a {
+      background-color: rgba(255, 170, 255, 0.8) !important;
+      color: rgb(0, 0, 0) !important;
+    }
+
+    .default-grey-da7cb902-89c6-46fe-b0e7-d3b35aaf237a {
+      background-color: rgba(119, 119, 119, 0.8) !important;
+      color: rgb(255, 255, 255) !important;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css"
+    href="./WhatsApp_files/lazy_loaded_high_priority_components_lazy_loaded_low_priority_components.a1cb850774e7f40e77cf.css">
+  <link rel="stylesheet" type="text/css"
+    href="./WhatsApp_files/lazy_loaded_high_priority_components.093e06db40d2637a5764.css">
+  <link rel="stylesheet" type="text/css"
+    href="./WhatsApp_files/lazy_loaded_low_priority_components.3a4d9c4cc149cf46a30f.css">
+  <link id="favicon" rel="shortcut icon" type="image/png"
+    href="https://web.whatsapp.com/img/f04_f13406e16c2b6a8dda89763cf005b02b.png"
+    src="/img/f04_f13406e16c2b6a8dda89763cf005b02b.png">
+</head>
+
+<body class="web dark vsc-initialized" cz-shortcut-listen="true">
+  <script
+    data-binary-transparency-hash-key="inline-js-4b79b6dc91a7ee33373b115991c3eb287ed710cfb6708421b4cab682eddbfcbd">try { var systemThemeDark, theme = window.localStorage.getItem(""), systemThemeMode = window.localStorage.getItem("system-theme-mode"); if (("true" === systemThemeMode || !theme) && window.matchMedia) { var systemTheme = window.matchMedia("(prefers-color-scheme: dark)"); systemThemeDark = systemTheme && systemTheme.matches } var darkTheme = '"dark"' === theme || Boolean(systemThemeDark); darkTheme && document.body.classList.add("dark") } catch (e) { }</script>
+  <div id="app">
+    <div class="_1ADa8 _3Nsgw app-wrapper-web font-fix">
+      <span></span><span></span><span></span><span></span><span></span>
+      <div tabindex="-1" class="_1XkO3 two">
+        <div class="_3DJrq"></div>
+        <div class="_3ArsE">
+          <div class="ldL67 _2i3T7" data-testid="drawer-left"><span class="vXLk5"></span></div>
+          <div class="ldL67 _3sh5K" data-testid="drawer-middle"><span class="vXLk5"></span></div>
+          <div class="ldL67 _1bLj8" data-testid="drawer-right"><span class="vXLk5"></span></div>
+        </div>
+        <div class="ldL67 _2i3T7">
+          <div id="side" class="_1KDb8">
+            <header class="_1G3Wr" style="align-items: center;">
+              <div class="YtmXM">
+                <div class="_3GlyB" style="height: 40px; width: 40px; cursor: pointer;">
+                  <div class="_1lPgH"><span data-testid="default-user" data-icon="default-user" class=""><svg
+                        viewBox="0 0 212 212" width="212" height="212" class="">
+                        <path fill="#DFE5E7" class="background"
+                          d="M106.251.5C164.653.5 212 47.846 212 106.25S164.653 212 106.25 212C47.846 212 .5 164.654.5 106.25S47.846.5 106.251.5z">
+                        </path>
+                        <g fill="#FFF">
+                          <path class="primary"
+                            d="M173.561 171.615a62.767 62.767 0 0 0-2.065-2.955 67.7 67.7 0 0 0-2.608-3.299 70.112 70.112 0 0 0-3.184-3.527 71.097 71.097 0 0 0-5.924-5.47 72.458 72.458 0 0 0-10.204-7.026 75.2 75.2 0 0 0-5.98-3.055c-.062-.028-.118-.059-.18-.087-9.792-4.44-22.106-7.529-37.416-7.529s-27.624 3.089-37.416 7.529c-.338.153-.653.318-.985.474a75.37 75.37 0 0 0-6.229 3.298 72.589 72.589 0 0 0-9.15 6.395 71.243 71.243 0 0 0-5.924 5.47 70.064 70.064 0 0 0-3.184 3.527 67.142 67.142 0 0 0-2.609 3.299 63.292 63.292 0 0 0-2.065 2.955 56.33 56.33 0 0 0-1.447 2.324c-.033.056-.073.119-.104.174a47.92 47.92 0 0 0-1.07 1.926c-.559 1.068-.818 1.678-.818 1.678v.398c18.285 17.927 43.322 28.985 70.945 28.985 27.678 0 52.761-11.103 71.055-29.095v-.289s-.619-1.45-1.992-3.778a58.346 58.346 0 0 0-1.446-2.322zM106.002 125.5c2.645 0 5.212-.253 7.68-.737a38.272 38.272 0 0 0 3.624-.896 37.124 37.124 0 0 0 5.12-1.958 36.307 36.307 0 0 0 6.15-3.67 35.923 35.923 0 0 0 9.489-10.48 36.558 36.558 0 0 0 2.422-4.84 37.051 37.051 0 0 0 1.716-5.25c.299-1.208.542-2.443.725-3.701.275-1.887.417-3.827.417-5.811s-.142-3.925-.417-5.811a38.734 38.734 0 0 0-1.215-5.494 36.68 36.68 0 0 0-3.648-8.298 35.923 35.923 0 0 0-9.489-10.48 36.347 36.347 0 0 0-6.15-3.67 37.124 37.124 0 0 0-5.12-1.958 37.67 37.67 0 0 0-3.624-.896 39.875 39.875 0 0 0-7.68-.737c-21.162 0-37.345 16.183-37.345 37.345 0 21.159 16.183 37.342 37.345 37.342z">
+                          </path>
+                        </g>
+                      </svg></span></div><img
+                    src="https://pps.whatsapp.net/v/t61.24694-24/153133934_1187558258419034_3937211883434302430_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=5952eb2cab615ba95228696e6a8d5bc0&amp;oe=6263EBD4"
+                    alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                </div>
+              </div>
+              <div class="_3yZPA">
+                <div class="_1QVfy _3UaCz"><span>
+                    <div class="_2cNrC">
+                      <div aria-disabled="false" role="button" tabindex="0" class="_26lC3" title="Status"
+                        aria-label="Status"><span data-testid="status-v3-unread" data-icon="status-v3-unread"
+                          class=""><svg version="1.1" id="df9d3429-f0ef-48b5-b5eb-f9d27b2deba6" x="0" y="0"
+                            viewBox="0 0 24 24" width="24" height="24" class="">
+                            <path fill="currentColor"
+                              d="M12.072 1.761a10.05 10.05 0 0 0-9.303 5.65.977.977 0 0 0 1.756.855 8.098 8.098 0 0 1 7.496-4.553.977.977 0 1 0 .051-1.952zM1.926 13.64a10.052 10.052 0 0 0 7.461 7.925.977.977 0 0 0 .471-1.895 8.097 8.097 0 0 1-6.012-6.386.977.977 0 0 0-1.92.356zm13.729 7.454a10.053 10.053 0 0 0 6.201-8.946.976.976 0 1 0-1.951-.081v.014a8.097 8.097 0 0 1-4.997 7.209.977.977 0 0 0 .727 1.813l.02-.009z">
+                            </path>
+                            <path fill="#009588" d="M19 1.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"></path>
+                          </svg></span></div><span></span>
+                    </div>
+                    <div class="_2cNrC">
+                      <div aria-disabled="false" role="button" tabindex="0" class="_26lC3" title="New chat"
+                        aria-label="New chat"><span data-testid="chat" data-icon="chat" class=""><svg
+                            viewBox="0 0 24 24" width="24" height="24" class="">
+                            <path fill="currentColor"
+                              d="M19.005 3.175H4.674C3.642 3.175 3 3.789 3 4.821V21.02l3.544-3.514h12.461c1.033 0 2.064-1.06 2.064-2.093V4.821c-.001-1.032-1.032-1.646-2.064-1.646zm-4.989 9.869H7.041V11.1h6.975v1.944zm3-4H7.041V7.1h9.975v1.944z">
+                            </path>
+                          </svg></span></div><span></span>
+                    </div>
+                    <div class="_2cNrC">
+                      <div aria-disabled="false" role="button" tabindex="0" class="_26lC3" title="Menu"
+                        aria-label="Menu"><span data-testid="menu" data-icon="menu" class=""><svg viewBox="0 0 24 24"
+                            width="24" height="24" class="">
+                            <path fill="currentColor"
+                              d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z">
+                            </path>
+                          </svg></span></div><span></span>
+                    </div>
+                  </span></div>
+              </div>
+              <!-- <button id="chrome_extension_privateWhatsApp__btn">secret button</button> -->
+            </header><span class="_3z9_h"></span>
+            <div tabindex="-1" class="uwk68">
+              <div class="_3yWey"><button class="_28-cz" aria-label="Search or start new chat">
+                  <div class="_1KJ7A _2nifA"><span data-testid="back" data-icon="back" class=""><svg viewBox="0 0 24 24"
+                        width="24" height="24" class="">
+                        <path fill="currentColor" d="m12 4 1.4 1.4L7.8 11H20v2H7.8l5.6 5.6L12 20l-8-8 8-8z">
+                        </path>
+                      </svg></span></div>
+                  <div class="_1KJ7A bHvlO"><span data-testid="search" data-icon="search" class=""><svg
+                        viewBox="0 0 24 24" width="24" height="24" class="">
+                        <path fill="currentColor"
+                          d="M15.009 13.805h-.636l-.22-.219a5.184 5.184 0 0 0 1.256-3.386 5.207 5.207 0 1 0-5.207 5.208 5.183 5.183 0 0 0 3.385-1.255l.221.22v.635l4.004 3.999 1.194-1.195-3.997-4.007zm-4.808 0a3.605 3.605 0 1 1 0-7.21 3.605 3.605 0 0 1 0 7.21z">
+                        </path>
+                      </svg></span></div>
+                </button><span></span>
+                <div class="_3Qnsr">Search or start new chat</div><label class="_1Jn3C">
+                  <div tabindex="-1" class="_1UWac _3hKpJ">
+                    <div class="_2vbn4" style="visibility: visible"></div>
+                    <div title="Search input textbox" role="textbox" class="_13NKt copyable-text selectable-text"
+                      contenteditable="true" data-tab="3" dir="ltr"></div>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="_3Bc7H _20c87" id="pane-side">
+              <div tabindex="-1" data-tab="4">
+                <div class="" style="pointer-events: auto;">
+                  <div aria-label="Chat list" class="_3uIPm WYyr1" role="grid" aria-rowcount="504"
+                    style="height: 36288px;">
+                    <div class="_3m_Xw"
+                      style="z-index: 503; transition: none 0s ease 0s; height: 72px; transform: translateY(72px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/226700780_1964469397047227_1158856974778812809_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=449b0d6ddfa8b5370c4d4b97058c6a57&amp;oe=6267C8A5"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="mee אניי"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">mee
+                                  אניי</span></div>
+                              <div class="_1i_wG">yesterday</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202A;Photo&#x202C;">
+                                  <div class="_2qo4q"><span data-testid="status-check" data-icon="status-check"
+                                      class=""><svg viewBox="0 0 14 18" width="14" height="18" class="">
+                                        <path fill="currentColor"
+                                          d="m12.502 5.035-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                                        </path>
+                                      </svg></span></div>
+                                  <div class="_2tHs0 status-image _3Bn0t"><span data-testid="status-image"
+                                      data-icon="status-image" class=""><svg viewBox="0 0 16 20" width="16" height="20"
+                                        class="">
+                                        <path fill="currentColor"
+                                          d="M13.822 4.668H7.14l-1.068-1.09a1.068 1.068 0 0 0-.663-.278H3.531c-.214 0-.51.128-.656.285L1.276 5.296c-.146.157-.266.46-.266.675v1.06l-.001.003v6.983c0 .646.524 1.17 1.17 1.17h11.643a1.17 1.17 0 0 0 1.17-1.17v-8.18a1.17 1.17 0 0 0-1.17-1.169zm-5.982 8.63a3.395 3.395 0 1 1 0-6.79 3.395 3.395 0 0 1 0 6.79zm0-5.787a2.392 2.392 0 1 0 0 4.784 2.392 2.392 0 0 0 0-4.784z">
+                                        </path>
+                                      </svg></span></div><span dir="auto"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">Photo</span>
+                                </span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG"><span>
+                                  <div class="_1pJ9J _2XH9R"><span data-testid="pinned2" data-icon="pinned2"
+                                      class=""><svg width="13" height="15" class="">
+                                        <path fill="currentColor"
+                                          d="M12.074 4.21 8.7 8.232l.116 4.233a.4.4 0 0 1-.657.318L.43 6.297a.4.4 0 0 1 .199-.702l4.196-.622L8.196.957a.63.63 0 0 1 .887-.078l2.914 2.445a.63.63 0 0 1 .077.887ZM1.294 14.229a.713.713 0 0 1-1.09-.915l2.674-3.64 1.536 1.288-3.12 3.267Z">
+                                        </path>
+                                      </svg></span></div>
+                                </span><span></span><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 502; transition: none 0s ease 0s; height: 72px; transform: translateY(0px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-user" data-icon="default-user"
+                                    class=""><svg viewBox="0 0 212 212" width="212" height="212" class="">
+                                      <path fill="#DFE5E7" class="background"
+                                        d="M106.251.5C164.653.5 212 47.846 212 106.25S164.653 212 106.25 212C47.846 212 .5 164.654.5 106.25S47.846.5 106.251.5z">
+                                      </path>
+                                      <g fill="#FFF">
+                                        <path class="primary"
+                                          d="M173.561 171.615a62.767 62.767 0 0 0-2.065-2.955 67.7 67.7 0 0 0-2.608-3.299 70.112 70.112 0 0 0-3.184-3.527 71.097 71.097 0 0 0-5.924-5.47 72.458 72.458 0 0 0-10.204-7.026 75.2 75.2 0 0 0-5.98-3.055c-.062-.028-.118-.059-.18-.087-9.792-4.44-22.106-7.529-37.416-7.529s-27.624 3.089-37.416 7.529c-.338.153-.653.318-.985.474a75.37 75.37 0 0 0-6.229 3.298 72.589 72.589 0 0 0-9.15 6.395 71.243 71.243 0 0 0-5.924 5.47 70.064 70.064 0 0 0-3.184 3.527 67.142 67.142 0 0 0-2.609 3.299 63.292 63.292 0 0 0-2.065 2.955 56.33 56.33 0 0 0-1.447 2.324c-.033.056-.073.119-.104.174a47.92 47.92 0 0 0-1.07 1.926c-.559 1.068-.818 1.678-.818 1.678v.398c18.285 17.927 43.322 28.985 70.945 28.985 27.678 0 52.761-11.103 71.055-29.095v-.289s-.619-1.45-1.992-3.778a58.346 58.346 0 0 0-1.446-2.322zM106.002 125.5c2.645 0 5.212-.253 7.68-.737a38.272 38.272 0 0 0 3.624-.896 37.124 37.124 0 0 0 5.12-1.958 36.307 36.307 0 0 0 6.15-3.67 35.923 35.923 0 0 0 9.489-10.48 36.558 36.558 0 0 0 2.422-4.84 37.051 37.051 0 0 0 1.716-5.25c.299-1.208.542-2.443.725-3.701.275-1.887.417-3.827.417-5.811s-.142-3.925-.417-5.811a38.734 38.734 0 0 0-1.215-5.494 36.68 36.68 0 0 0-3.648-8.298 35.923 35.923 0 0 0-9.489-10.48 36.347 36.347 0 0 0-6.15-3.67 37.124 37.124 0 0 0-5.12-1.958 37.67 37.67 0 0 0-3.624-.896 39.875 39.875 0 0 0-7.68-.737c-21.162 0-37.345 16.183-37.345 37.345 0 21.159 16.183 37.342 37.345 37.342z">
+                                        </path>
+                                      </g>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/213965974_154353326855656_2766612300684341084_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVw2pN-YSnWf5gnEYCevt5YtM1fbyohAJQX-MBO8WT3v-Q&amp;oe=6264FAB6"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="Mummy 😘"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">Mummy 😘
+                                  <img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="😘" draggable="false" class="b82 emoji wa i0jNr"
+                                    style="background-position: -80px -60px;"></span></div>
+                              <div class="_1i_wG">Monday</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202A;To call?
+He said he'll pick me up from Raanana&#x202C;">
+                                  <div class="_2qo4q _3NIfV"><span data-testid="status-dblcheck"
+                                      data-icon="status-dblcheck" class=""><svg viewBox="0 0 18 18" width="18"
+                                        height="18" class="">
+                                        <path fill="currentColor"
+                                          d="m17.394 5.035-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                                        </path>
+                                      </svg></span></div><span dir="ltr"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">To
+                                    call?
+                                    He said he'll pick me up from Raanana</span>
+                                </span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG"><span>
+                                  <div class="_1pJ9J _2XH9R"><span data-testid="pinned2" data-icon="pinned2"
+                                      class=""><svg width="13" height="15" class="">
+                                        <path fill="currentColor"
+                                          d="M12.074 4.21 8.7 8.232l.116 4.233a.4.4 0 0 1-.657.318L.43 6.297a.4.4 0 0 1 .199-.702l4.196-.622L8.196.957a.63.63 0 0 1 .887-.078l2.914 2.445a.63.63 0 0 1 .077.887ZM1.294 14.229a.713.713 0 0 1-1.09-.915l2.674-3.64 1.536 1.288-3.12 3.267Z">
+                                        </path>
+                                      </svg></span></div>
+                                </span><span></span><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 501; transition: none 0s ease 0s; height: 72px; transform: translateY(360px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/254795606_864274470945224_8063490740673825025_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVyI8rwtPDu4jqIziBZXXrKKXj-UDw-0Aiv2uYw-1A068A&amp;oe=62643674"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="שם הקבוצה"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">
+                                  שם קבוצה
+                                </span></div>
+                              <div class="_1i_wG">8:25 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202B;תבורך.🌷☘️😇✡️&#x202C;"><span
+                                    dir="auto" class="l7jjieqr i0jNr">+972
+                                    54-453-2527</span><span>:&nbsp;</span><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">תבורך.<img
+                                      crossorigin="anonymous"
+                                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                      alt="🌷" draggable="false" class="b22 emoji wa i0jNr"
+                                      style="background-position: -80px -40px;"><img crossorigin="anonymous"
+                                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                      alt="☘️" draggable="false" class="b2 emoji wa i0jNr"
+                                      style="background-position: -40px -40px;"><img crossorigin="anonymous"
+                                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                      alt="😇" draggable="false" class="b82 emoji wa i0jNr"
+                                      style="background-position: -40px 0px;"><img crossorigin="anonymous"
+                                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                      alt="✡️" draggable="false" class="b7 emoji wa i0jNr"
+                                      style="background-position: -20px -40px;"></span></span>
+                              </div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG"><span>
+                                  <div class="_1pJ9J" aria-label="Muted chat"><span data-testid="muted"
+                                      data-icon="muted" class=""><svg viewBox="0 0 16 18" width="16" height="18"
+                                        class="">
+                                        <path fill="currentColor"
+                                          d="M11.52 9.206c0-1.4-.778-2.567-1.944-3.111v1.711L11.52 9.75v-.544zm1.945 0c0 .7-.156 1.4-.389 2.022l1.167 1.167c.544-.933.778-2.1.778-3.267 0-3.344-2.333-6.144-5.444-6.844v1.633c2.255.778 3.888 2.8 3.888 5.289zm-11.433-7L1.02 3.217l3.656 3.656H1.02v4.667h3.111l3.889 3.889v-5.211l3.344 3.344c-.544.389-1.089.7-1.789.933v1.633a6.64 6.64 0 0 0 2.878-1.4l1.556 1.556 1.011-1.011-7-7-5.988-6.067zm5.988.778L6.387 4.617 8.02 6.25V2.984z">
+                                        </path>
+                                      </svg></span></div>
+                                </span><span></span><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 500; transition: none 0s ease 0s; height: 72px; transform: translateY(432px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/232426001_5589189091097778_2194283763327674994_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVwjyB2GX596nG3Yctj7hBi74pdEwnlZKSPe8X9u1OS02g&amp;oe=6265BBA3"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="חלק יומי120סיון רהב מאיר"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">חלק
+                                  יומי120סיון רהב מאיר</span></div>
+                              <div class="_1i_wG">8:18 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV"
+                                  title="&#x202B;*אשריך שיש לך מי שיקשקש / החלק היומי / סיון רהב-מאיר:*"><span
+                                    dir="auto" class="l7jjieqr i0jNr">+972
+                                    52-276-7725</span><span>:&nbsp;</span><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr"><strong
+                                      class="i0jNr">אשריך שיש לך מי שיקשקש / החלק היומי / סיון
+                                      רהב-מאיר:</strong>
+
+                                    <strong class="i0jNr">*</strong> <strong class="i0jNr"><em class="i0jNr">לקבלת
+                                        התכנים של סיון רהב-מאיר באופן קבוע:
+                                        https://lp.vp4.me/pif9</em></strong></span></span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 499; transition: none 0s ease 0s; height: 72px; transform: translateY(504px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-user" data-icon="default-user"
+                                    class=""><svg viewBox="0 0 212 212" width="212" height="212" class="">
+                                      <path fill="#DFE5E7" class="background"
+                                        d="M106.251.5C164.653.5 212 47.846 212 106.25S164.653 212 106.25 212C47.846 212 .5 164.654.5 106.25S47.846.5 106.251.5z">
+                                      </path>
+                                      <g fill="#FFF">
+                                        <path class="primary"
+                                          d="M173.561 171.615a62.767 62.767 0 0 0-2.065-2.955 67.7 67.7 0 0 0-2.608-3.299 70.112 70.112 0 0 0-3.184-3.527 71.097 71.097 0 0 0-5.924-5.47 72.458 72.458 0 0 0-10.204-7.026 75.2 75.2 0 0 0-5.98-3.055c-.062-.028-.118-.059-.18-.087-9.792-4.44-22.106-7.529-37.416-7.529s-27.624 3.089-37.416 7.529c-.338.153-.653.318-.985.474a75.37 75.37 0 0 0-6.229 3.298 72.589 72.589 0 0 0-9.15 6.395 71.243 71.243 0 0 0-5.924 5.47 70.064 70.064 0 0 0-3.184 3.527 67.142 67.142 0 0 0-2.609 3.299 63.292 63.292 0 0 0-2.065 2.955 56.33 56.33 0 0 0-1.447 2.324c-.033.056-.073.119-.104.174a47.92 47.92 0 0 0-1.07 1.926c-.559 1.068-.818 1.678-.818 1.678v.398c18.285 17.927 43.322 28.985 70.945 28.985 27.678 0 52.761-11.103 71.055-29.095v-.289s-.619-1.45-1.992-3.778a58.346 58.346 0 0 0-1.446-2.322zM106.002 125.5c2.645 0 5.212-.253 7.68-.737a38.272 38.272 0 0 0 3.624-.896 37.124 37.124 0 0 0 5.12-1.958 36.307 36.307 0 0 0 6.15-3.67 35.923 35.923 0 0 0 9.489-10.48 36.558 36.558 0 0 0 2.422-4.84 37.051 37.051 0 0 0 1.716-5.25c.299-1.208.542-2.443.725-3.701.275-1.887.417-3.827.417-5.811s-.142-3.925-.417-5.811a38.734 38.734 0 0 0-1.215-5.494 36.68 36.68 0 0 0-3.648-8.298 35.923 35.923 0 0 0-9.489-10.48 36.347 36.347 0 0 0-6.15-3.67 37.124 37.124 0 0 0-5.12-1.958 37.67 37.67 0 0 0-3.624-.896 39.875 39.875 0 0 0-7.68-.737c-21.162 0-37.345 16.183-37.345 37.345 0 21.159 16.183 37.342 37.345 37.342z">
+                                        </path>
+                                      </g>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/135755180_1130461937372810_1151577303428572877_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVxsy7CnDI-nLCM8NhOBVLdPDBuPZaGWv2LZvTyzGj2ViQ&amp;oe=6266F3F8"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="רעות"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">רעות</span>
+                              </div>
+                              <div class="_1i_wG">8:15 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202B;היי
+Any idea 
+אם יש מישהו שגר ברעננה במשרד היום/מחר ?&#x202C;">
+                                  <div class="_2qo4q"><span data-testid="status-dblcheck" data-icon="status-dblcheck"
+                                      class=""><svg viewBox="0 0 18 18" width="18" height="18" class="">
+                                        <path fill="currentColor"
+                                          d="m17.394 5.035-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                                        </path>
+                                      </svg></span></div><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">היי
+                                    Any idea&nbsp;
+                                    אם יש מישהו שגר ברעננה במשרד היום/מחר ?</span>
+                                </span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 498; transition: none 0s ease 0s; height: 72px; transform: translateY(576px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/57104298_582980935537968_583519445155053568_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVztxHiK3YOISD7lPV_nL5Snsc3ZAnB3qd8wYZFz2agaTg&amp;oe=62639FFE"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="עזריאל טרמפ 🚘"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">עזריאל
+                                  טרמפ <img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="🚘" draggable="false" class="b89 emoji wa i0jNr"
+                                    style="background-position: -60px 0px;"></span></div>
+                              <div class="_1i_wG">8:02 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202B;משהו לדרור ב8 וחצי?&#x202C;"><span
+                                    dir="auto" class="l7jjieqr i0jNr">+972
+                                    52-308-3577</span><span>:&nbsp;</span><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">משהו
+                                    לדרור ב8 וחצי?</span></span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG"><span>
+                                  <div class="_1pJ9J" aria-label="Muted chat"><span data-testid="muted"
+                                      data-icon="muted" class=""><svg viewBox="0 0 16 18" width="16" height="18"
+                                        class="">
+                                        <path fill="currentColor"
+                                          d="M11.52 9.206c0-1.4-.778-2.567-1.944-3.111v1.711L11.52 9.75v-.544zm1.945 0c0 .7-.156 1.4-.389 2.022l1.167 1.167c.544-.933.778-2.1.778-3.267 0-3.344-2.333-6.144-5.444-6.844v1.633c2.255.778 3.888 2.8 3.888 5.289zm-11.433-7L1.02 3.217l3.656 3.656H1.02v4.667h3.111l3.889 3.889v-5.211l3.344 3.344c-.544.389-1.089.7-1.789.933v1.633a6.64 6.64 0 0 0 2.878-1.4l1.556 1.556 1.011-1.011-7-7-5.988-6.067zm5.988.778L6.387 4.617 8.02 6.25V2.984z">
+                                        </path>
+                                      </svg></span></div>
+                                </span><span></span><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 497; transition: none 0s ease 0s; height: 72px; transform: translateY(648px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-user" data-icon="default-user"
+                                    class=""><svg viewBox="0 0 212 212" width="212" height="212" class="">
+                                      <path fill="#DFE5E7" class="background"
+                                        d="M106.251.5C164.653.5 212 47.846 212 106.25S164.653 212 106.25 212C47.846 212 .5 164.654.5 106.25S47.846.5 106.251.5z">
+                                      </path>
+                                      <g fill="#FFF">
+                                        <path class="primary"
+                                          d="M173.561 171.615a62.767 62.767 0 0 0-2.065-2.955 67.7 67.7 0 0 0-2.608-3.299 70.112 70.112 0 0 0-3.184-3.527 71.097 71.097 0 0 0-5.924-5.47 72.458 72.458 0 0 0-10.204-7.026 75.2 75.2 0 0 0-5.98-3.055c-.062-.028-.118-.059-.18-.087-9.792-4.44-22.106-7.529-37.416-7.529s-27.624 3.089-37.416 7.529c-.338.153-.653.318-.985.474a75.37 75.37 0 0 0-6.229 3.298 72.589 72.589 0 0 0-9.15 6.395 71.243 71.243 0 0 0-5.924 5.47 70.064 70.064 0 0 0-3.184 3.527 67.142 67.142 0 0 0-2.609 3.299 63.292 63.292 0 0 0-2.065 2.955 56.33 56.33 0 0 0-1.447 2.324c-.033.056-.073.119-.104.174a47.92 47.92 0 0 0-1.07 1.926c-.559 1.068-.818 1.678-.818 1.678v.398c18.285 17.927 43.322 28.985 70.945 28.985 27.678 0 52.761-11.103 71.055-29.095v-.289s-.619-1.45-1.992-3.778a58.346 58.346 0 0 0-1.446-2.322zM106.002 125.5c2.645 0 5.212-.253 7.68-.737a38.272 38.272 0 0 0 3.624-.896 37.124 37.124 0 0 0 5.12-1.958 36.307 36.307 0 0 0 6.15-3.67 35.923 35.923 0 0 0 9.489-10.48 36.558 36.558 0 0 0 2.422-4.84 37.051 37.051 0 0 0 1.716-5.25c.299-1.208.542-2.443.725-3.701.275-1.887.417-3.827.417-5.811s-.142-3.925-.417-5.811a38.734 38.734 0 0 0-1.215-5.494 36.68 36.68 0 0 0-3.648-8.298 35.923 35.923 0 0 0-9.489-10.48 36.347 36.347 0 0 0-6.15-3.67 37.124 37.124 0 0 0-5.12-1.958 37.67 37.67 0 0 0-3.624-.896 39.875 39.875 0 0 0-7.68-.737c-21.162 0-37.345 16.183-37.345 37.345 0 21.159 16.183 37.342 37.345 37.342z">
+                                        </path>
+                                      </g>
+                                    </svg></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="+972 54-566-4877"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">+972
+                                  54-566-4877</span></div>
+                              <div class="_1i_wG">8:01 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV"
+                                  title="&#x202B;אם את מגיעה היום או מחר . המתנה לחג ממתינה אצלי&#x202C;"><span
+                                    dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">אם
+                                    את מגיעה היום או מחר . המתנה לחג ממתינה אצלי</span></span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 496; transition: none 0s ease 0s; height: 72px; transform: translateY(720px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/95091834_374886490611416_3013335998851012719_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVxSFcMPKobg_x_xuA7d6EK7xewykzfxOX6KTREdxadXaA&amp;oe=626451B9"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="שיעורי הרב רוזנבלום 21"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">שיעורי
+                                  הרב רוזנבלום 21</span></div>
+                              <div class="_1i_wG">6:33 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202A;חוברת - פסח תשפב.doc&#x202C;"><span
+                                    dir="auto" class="l7jjieqr i0jNr">שיעורי הרב</span><span>:&nbsp;</span>
+                                  <div class="_2tHs0 status-document _3Bn0t"><span data-testid="status-document"
+                                      data-icon="status-document" class=""><svg viewBox="0 0 13 20" width="13"
+                                        height="20" class="">
+                                        <path fill="currentColor"
+                                          d="M10.2 3H2.5C1.7 3 1 3.7 1 4.5v10.1c0 .7.7 1.4 1.5 1.4h7.7c.8 0 1.5-.7 1.5-1.5v-10C11.6 3.7 11 3 10.2 3zm-2.6 9.7H3.5v-1.3h4.1v1.3zM9.3 10H3.5V8.7h5.8V10zm0-2.7H3.5V6h5.8v1.3z">
+                                        </path>
+                                      </svg></span></div><span dir="auto"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">חוברת
+                                    - פסח תשפב.doc</span>
+                                </span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 495; transition: none 0s ease 0s; height: 72px; transform: translateY(792px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="קריאת מגילה תשפ&quot;ב!🥳"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">קריאת
+                                  מגילה תשפ"ב!<img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="🥳" draggable="false" class="b105 emoji wa i0jNr"
+                                    style="background-position: -80px -60px;"></span></div>
+                              <div class="_1i_wG">1:06 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202B;חייבת אחת כזאת&#x202C;"><span
+                                    dir="auto" class="l7jjieqr i0jNr">נגה</span><span>:&nbsp;</span><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">חייבת
+                                    אחת כזאת</span></span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 494; transition: none 0s ease 0s; height: 72px; transform: translateY(864px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="בקשר לשו&quot;ת הרב רימון"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">בקשר
+                                  לשו"ת הרב רימון</span></div>
+                              <div class="_1i_wG">yesterday</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title=""><span dir="auto"
+                                    class="l7jjieqr i0jNr">מוריה</span><span>:&nbsp;</span><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">שמה
+                              </div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 493; transition: none 0s ease 0s; height: 72px; transform: translateY(1008px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/123156082_185939483057991_7380110656655487652_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=c5395303ce1e535a8634fbb7e0f78f8b&amp;oe=62666C88"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="JSON 💔"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">JSON
+                                  <img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="💔" draggable="false" class="b70 emoji wa i0jNr"
+                                    style="background-position: -20px -40px;"></span></div>
+                              <div class="_1i_wG">yesterday</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202B;תודההה&#x202C;"><span dir="auto"
+                                    class="l7jjieqr i0jNr">רעות</span><span>:&nbsp;</span><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">תודההה</span></span>
+                              </div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 492; transition: none 0s ease 0s; height: 72px; transform: translateY(288px);">
+                      <div tabindex="0" aria-selected="true" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj _2_TVt">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/95952431_254769272572818_7537477517243870550_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVyt8RhDRQG2wwmyBMeyZia_m1fRqd_1ZAyzafCyuFP30Q&amp;oe=626523C0"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="הלכות יומיות 27"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">הלכות
+                                  יומיות 27</span></div>
+                              <div class="_1i_wG">8:34 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV"
+                                  title="&#x202B;- *מצוות שתיית 4 כוסות, הכיצד?*"><span dir="auto"
+                                    class="l7jjieqr i0jNr">+972
+                                    54-574-3099</span><span>:&nbsp;</span><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">-
+                                    <strong class="i0jNr">מצוות שתיית 4 כוסות,
+                                      הכיצד?</strong></span></span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 491; transition: none 0s ease 0s; height: 72px; transform: translateY(216px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-user" data-icon="default-user"
+                                    class=""><svg viewBox="0 0 212 212" width="212" height="212" class="">
+                                      <path fill="#DFE5E7" class="background"
+                                        d="M106.251.5C164.653.5 212 47.846 212 106.25S164.653 212 106.25 212C47.846 212 .5 164.654.5 106.25S47.846.5 106.251.5z">
+                                      </path>
+                                      <g fill="#FFF">
+                                        <path class="primary"
+                                          d="M173.561 171.615a62.767 62.767 0 0 0-2.065-2.955 67.7 67.7 0 0 0-2.608-3.299 70.112 70.112 0 0 0-3.184-3.527 71.097 71.097 0 0 0-5.924-5.47 72.458 72.458 0 0 0-10.204-7.026 75.2 75.2 0 0 0-5.98-3.055c-.062-.028-.118-.059-.18-.087-9.792-4.44-22.106-7.529-37.416-7.529s-27.624 3.089-37.416 7.529c-.338.153-.653.318-.985.474a75.37 75.37 0 0 0-6.229 3.298 72.589 72.589 0 0 0-9.15 6.395 71.243 71.243 0 0 0-5.924 5.47 70.064 70.064 0 0 0-3.184 3.527 67.142 67.142 0 0 0-2.609 3.299 63.292 63.292 0 0 0-2.065 2.955 56.33 56.33 0 0 0-1.447 2.324c-.033.056-.073.119-.104.174a47.92 47.92 0 0 0-1.07 1.926c-.559 1.068-.818 1.678-.818 1.678v.398c18.285 17.927 43.322 28.985 70.945 28.985 27.678 0 52.761-11.103 71.055-29.095v-.289s-.619-1.45-1.992-3.778a58.346 58.346 0 0 0-1.446-2.322zM106.002 125.5c2.645 0 5.212-.253 7.68-.737a38.272 38.272 0 0 0 3.624-.896 37.124 37.124 0 0 0 5.12-1.958 36.307 36.307 0 0 0 6.15-3.67 35.923 35.923 0 0 0 9.489-10.48 36.558 36.558 0 0 0 2.422-4.84 37.051 37.051 0 0 0 1.716-5.25c.299-1.208.542-2.443.725-3.701.275-1.887.417-3.827.417-5.811s-.142-3.925-.417-5.811a38.734 38.734 0 0 0-1.215-5.494 36.68 36.68 0 0 0-3.648-8.298 35.923 35.923 0 0 0-9.489-10.48 36.347 36.347 0 0 0-6.15-3.67 37.124 37.124 0 0 0-5.12-1.958 37.67 37.67 0 0 0-3.624-.896 39.875 39.875 0 0 0-7.68-.737c-21.162 0-37.345 16.183-37.345 37.345 0 21.159 16.183 37.342 37.345 37.342z">
+                                        </path>
+                                      </g>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/55964020_380379562557578_4537227889858314240_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVwFQuIODRF4FzaJzqC_unqNPpzib2Ut2DIIAEWXVvHslQ&amp;oe=6265FA86"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="Abba 😘"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">Abba
+                                  <img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="😘" draggable="false" class="b82 emoji wa i0jNr"
+                                    style="background-position: -80px -60px;"></span></div>
+                              <div class="_1i_wG">8:35 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV"
+                                  title="&#x202A;Any idea? I though with your account it might not ask for money 💸
+https://developer.chrome.com/docs/webstore/publish/#:~:text=To%20upload%20your%20item%2C%20use%20the%20Chrome%20Developer%20Dashboard.&#x202C;">
+                                  <div class="_2qo4q"><span data-testid="status-dblcheck" data-icon="status-dblcheck"
+                                      class=""><svg viewBox="0 0 18 18" width="18" height="18" class="">
+                                        <path fill="currentColor"
+                                          d="m17.394 5.035-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                                        </path>
+                                      </svg></span></div>
+                                  <div class="_2tHs0 status-image _3Bn0t"><span data-testid="status-image"
+                                      data-icon="status-image" class=""><svg viewBox="0 0 16 20" width="16" height="20"
+                                        class="">
+                                        <path fill="currentColor"
+                                          d="M13.822 4.668H7.14l-1.068-1.09a1.068 1.068 0 0 0-.663-.278H3.531c-.214 0-.51.128-.656.285L1.276 5.296c-.146.157-.266.46-.266.675v1.06l-.001.003v6.983c0 .646.524 1.17 1.17 1.17h11.643a1.17 1.17 0 0 0 1.17-1.17v-8.18a1.17 1.17 0 0 0-1.17-1.169zm-5.982 8.63a3.395 3.395 0 1 1 0-6.79 3.395 3.395 0 0 1 0 6.79zm0-5.787a2.392 2.392 0 1 0 0 4.784 2.392 2.392 0 0 0 0-4.784z">
+                                        </path>
+                                      </svg></span></div><span dir="ltr"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">Any
+                                    idea? I though with your account it might not ask for money <img
+                                      crossorigin="anonymous"
+                                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                      alt="💸" draggable="false" class="b72 emoji wa i0jNr"
+                                      style="background-position: -40px 0px;">
+                                    https://developer.chrome.com/docs/webstore/publish/#:~:text=To%20upload%20your%20item%2C%20use%20the%20Chrome%20Developer%20Dashboard.</span>
+                                </span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 490; transition: none 0s ease 0s; height: 72px; transform: translateY(1224px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="שיעור א תשפ&quot;ב "
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">שיעור
+                                  א תשפ"ב </span></div>
+                              <div class="_1i_wG">yesterday</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202B;יקרות ב״ה זכינו להוציא את הפלייליסט המדהים הזה
+נשמח מאוד שתפיצו הלאה למשפחה וחברים בווצאפ ובפייסבוק
+❤️&#x202C;"><span dir="auto" class="l7jjieqr i0jNr">+972 50-880-1835</span><span>:&nbsp;</span><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">יקרות
+                                    <img crossorigin="anonymous"
+                                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                      alt="❤️" draggable="false" class="b7 emoji wa i0jNr"
+                                      style="background-position: -80px -80px;"></span></span>
+                              </div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 489; transition: none 0s ease 0s; height: 72px; transform: translateY(936px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-user" data-icon="default-user"
+                                    class=""><svg viewBox="0 0 212 212" width="212" height="212" class="">
+                                      <path fill="#DFE5E7" class="background"
+                                        d="M106.251.5C164.653.5 212 47.846 212 106.25S164.653 212 106.25 212C47.846 212 .5 164.654.5 106.25S47.846.5 106.251.5z">
+                                      </path>
+                                      <g fill="#FFF">
+                                        <path class="primary"
+                                          d="M173.561 171.615a62.767 62.767 0 0 0-2.065-2.955 67.7 67.7 0 0 0-2.608-3.299 70.112 70.112 0 0 0-3.184-3.527 71.097 71.097 0 0 0-5.924-5.47 72.458 72.458 0 0 0-10.204-7.026 75.2 75.2 0 0 0-5.98-3.055c-.062-.028-.118-.059-.18-.087-9.792-4.44-22.106-7.529-37.416-7.529s-27.624 3.089-37.416 7.529c-.338.153-.653.318-.985.474a75.37 75.37 0 0 0-6.229 3.298 72.589 72.589 0 0 0-9.15 6.395 71.243 71.243 0 0 0-5.924 5.47 70.064 70.064 0 0 0-3.184 3.527 67.142 67.142 0 0 0-2.609 3.299 63.292 63.292 0 0 0-2.065 2.955 56.33 56.33 0 0 0-1.447 2.324c-.033.056-.073.119-.104.174a47.92 47.92 0 0 0-1.07 1.926c-.559 1.068-.818 1.678-.818 1.678v.398c18.285 17.927 43.322 28.985 70.945 28.985 27.678 0 52.761-11.103 71.055-29.095v-.289s-.619-1.45-1.992-3.778a58.346 58.346 0 0 0-1.446-2.322zM106.002 125.5c2.645 0 5.212-.253 7.68-.737a38.272 38.272 0 0 0 3.624-.896 37.124 37.124 0 0 0 5.12-1.958 36.307 36.307 0 0 0 6.15-3.67 35.923 35.923 0 0 0 9.489-10.48 36.558 36.558 0 0 0 2.422-4.84 37.051 37.051 0 0 0 1.716-5.25c.299-1.208.542-2.443.725-3.701.275-1.887.417-3.827.417-5.811s-.142-3.925-.417-5.811a38.734 38.734 0 0 0-1.215-5.494 36.68 36.68 0 0 0-3.648-8.298 35.923 35.923 0 0 0-9.489-10.48 36.347 36.347 0 0 0-6.15-3.67 37.124 37.124 0 0 0-5.12-1.958 37.67 37.67 0 0 0-3.624-.896 39.875 39.875 0 0 0-7.68-.737c-21.162 0-37.345 16.183-37.345 37.345 0 21.159 16.183 37.342 37.345 37.342z">
+                                        </path>
+                                      </g>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/151782034_163743075592920_7280780990679066431_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=2d895800aaed8577fcec863edbb65335&amp;oe=62647C09"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="רעות אביטל"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">רעות
+                                  אביטל</span></div>
+                              <div class="_1i_wG">yesterday</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV"
+                                  title="&#x202B;הייתי אומרת לו, אבל הוא חזר בצהריים ממסע בנ&quot;ע וישן מאז&#x202C;">
+                                  <div class="_2qo4q"><span data-testid="status-dblcheck" data-icon="status-dblcheck"
+                                      class=""><svg viewBox="0 0 18 18" width="18" height="18" class="">
+                                        <path fill="currentColor"
+                                          d="m17.394 5.035-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-.427-.388a.381.381 0 0 0-.578.038l-.451.576a.497.497 0 0 0 .043.645l1.575 1.51a.38.38 0 0 0 .577-.039l7.483-9.602a.436.436 0 0 0-.076-.609zm-4.892 0-.57-.444a.434.434 0 0 0-.609.076l-6.39 8.198a.38.38 0 0 1-.577.039l-2.614-2.556a.435.435 0 0 0-.614.007l-.505.516a.435.435 0 0 0 .007.614l3.887 3.8a.38.38 0 0 0 .577-.039l7.483-9.602a.435.435 0 0 0-.075-.609z">
+                                        </path>
+                                      </svg></span></div><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr">הייתי
+                                    אומרת לו, אבל הוא חזר בצהריים ממסע בנ"ע וישן מאז</span>
+                                </span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 488; transition: none 0s ease 0s; height: 72px; transform: translateY(144px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj _3C4Vf">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div><img
+                                  src="https://pps.whatsapp.net/v/t61.24694-24/164432188_308649261309527_2539412245318628668_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVztTMLAlJOqUUnSNXCYrL2570v32tWGQCopAIcsqMFkDQ&amp;oe=62655E43"
+                                  alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="דקת תורה עם תכנית הדר 📖3️⃣"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">דקת
+                                  תורה עם תכנית הדר <img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="📖" draggable="false" class="b73 emoji wa i0jNr"
+                                    style="background-position: -40px -20px;"><img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="3️⃣" draggable="false" class="b0 emoji wa i0jNr"
+                                    style="background-position: 0px -20px;"></span></div>
+                              <div class="_1i_wG">8:39 AM</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV"
+                                  title="&#x202A;https://youtu.be/YHUpU-pq2Ls&#x202C;"><span dir="auto"
+                                    class="l7jjieqr i0jNr">+972
+                                    50-884-9138</span><span>:&nbsp;</span><span dir="ltr"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">https://youtu.be/YHUpU-pq2Ls</span></span>
+                              </div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG"><span>
+                                  <div class="_1pJ9J"><span
+                                      class="l7jjieqr cfzgl7ar ei5e7seu h0viaqh7 tpmajp1w c0uhu3dl riy2oczp dsh4tgtl sy6s5v3r gz7w46tb lyutrhe2 qfejxiq4 fewfhwl7 ovhn1urg ap18qm3b ikwl5qvt j90th5db aumms1qt"
+                                      aria-label="1 unread message">1</span></div>
+                                </span><span></span><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 487; transition: none 0s ease 0s; height: 72px; transform: translateY(1152px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj _3C4Vf">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group"
+                                    class=""><svg width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                                      <path class="background"
+                                        d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                                        fill="#DFE5E7"></path>
+                                      <path class="primary" clip-rule="evenodd"
+                                        d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                                      </path>
+                                    </svg></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="שלושים יום לפני החג🎉🍷"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">שלושים
+                                  יום לפני החג<img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="🎉" draggable="false" class="b26 emoji wa i0jNr"
+                                    style="background-position: -20px 0px;"><img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="🍷" draggable="false" class="b25 emoji wa i0jNr"
+                                    style="background-position: -60px 0px;"></span></div>
+                              <div class="_1i_wG">yesterday</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202B;*יא ניסן*"><span dir="auto"
+                                    class="l7jjieqr i0jNr">+972
+                                    50-385-9859</span><span>:&nbsp;</span><span dir="rtl"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 f804f6gw ln8gz9je i0jNr"><strong
+                                      class="i0jNr">יא ניסן</strong></span></span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG"><span>
+                                  <div class="_1pJ9J"><span
+                                      class="l7jjieqr cfzgl7ar ei5e7seu h0viaqh7 tpmajp1w c0uhu3dl riy2oczp dsh4tgtl sy6s5v3r gz7w46tb lyutrhe2 qfejxiq4 fewfhwl7 ovhn1urg ap18qm3b ikwl5qvt j90th5db aumms1qt"
+                                      aria-label="8 unread messages">8</span></div>
+                                </span><span></span><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_3m_Xw"
+                      style="z-index: 486; transition: none 0s ease 0s; height: 72px; transform: translateY(1080px);">
+                      <div tabindex="-1" aria-selected="false" role="row">
+                        <div data-testid="cell-frame-container" class="_2nY6U vq6sj">
+                          <div class="_2EU3r">
+                            <div class="HONz8">
+                              <div class="_3GlyB" style="height: 49px; width: 49px;">
+                                <div class="_1lPgH"><span data-testid="default-user" data-icon="default-user"
+                                    class=""><svg viewBox="0 0 212 212" width="212" height="212" class="">
+                                      <path fill="#DFE5E7" class="background"
+                                        d="M106.251.5C164.653.5 212 47.846 212 106.25S164.653 212 106.25 212C47.846 212 .5 164.654.5 106.25S47.846.5 106.251.5z">
+                                      </path>
+                                      <g fill="#FFF">
+                                        <path class="primary"
+                                          d="M173.561 171.615a62.767 62.767 0 0 0-2.065-2.955 67.7 67.7 0 0 0-2.608-3.299 70.112 70.112 0 0 0-3.184-3.527 71.097 71.097 0 0 0-5.924-5.47 72.458 72.458 0 0 0-10.204-7.026 75.2 75.2 0 0 0-5.98-3.055c-.062-.028-.118-.059-.18-.087-9.792-4.44-22.106-7.529-37.416-7.529s-27.624 3.089-37.416 7.529c-.338.153-.653.318-.985.474a75.37 75.37 0 0 0-6.229 3.298 72.589 72.589 0 0 0-9.15 6.395 71.243 71.243 0 0 0-5.924 5.47 70.064 70.064 0 0 0-3.184 3.527 67.142 67.142 0 0 0-2.609 3.299 63.292 63.292 0 0 0-2.065 2.955 56.33 56.33 0 0 0-1.447 2.324c-.033.056-.073.119-.104.174a47.92 47.92 0 0 0-1.07 1.926c-.559 1.068-.818 1.678-.818 1.678v.398c18.285 17.927 43.322 28.985 70.945 28.985 27.678 0 52.761-11.103 71.055-29.095v-.289s-.619-1.45-1.992-3.778a58.346 58.346 0 0 0-1.446-2.322zM106.002 125.5c2.645 0 5.212-.253 7.68-.737a38.272 38.272 0 0 0 3.624-.896 37.124 37.124 0 0 0 5.12-1.958 36.307 36.307 0 0 0 6.15-3.67 35.923 35.923 0 0 0 9.489-10.48 36.558 36.558 0 0 0 2.422-4.84 37.051 37.051 0 0 0 1.716-5.25c.299-1.208.542-2.443.725-3.701.275-1.887.417-3.827.417-5.811s-.142-3.925-.417-5.811a38.734 38.734 0 0 0-1.215-5.494 36.68 36.68 0 0 0-3.648-8.298 35.923 35.923 0 0 0-9.489-10.48 36.347 36.347 0 0 0-6.15-3.67 37.124 37.124 0 0 0-5.12-1.958 37.67 37.67 0 0 0-3.624-.896 39.875 39.875 0 0 0-7.68-.737c-21.162 0-37.345 16.183-37.345 37.345 0 21.159 16.183 37.342 37.345 37.342z">
+                                        </path>
+                                      </g>
+                                    </svg></span></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="_3OvU8">
+                            <div role="gridcell" aria-colindex="2" class="_3vPI2">
+                              <div class="zoWT4"><span dir="auto" title="Sister 💗"
+                                  class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">Sister
+                                  <img crossorigin="anonymous"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt="💗" draggable="false" class="b70 emoji wa i0jNr"
+                                    style="background-position: -80px -40px;"></span></div>
+                              <div class="_1i_wG">yesterday</div>
+                            </div>
+                            <div class="_37FrU">
+                              <div class="_1qB8f"><span class="Hy9nV" title="&#x202A;Photo&#x202C;">
+                                  <div class="_2tHs0 status-image _3Bn0t"><span data-testid="status-image"
+                                      data-icon="status-image" class=""><svg viewBox="0 0 16 20" width="16" height="20"
+                                        class="">
+                                        <path fill="currentColor"
+                                          d="M13.822 4.668H7.14l-1.068-1.09a1.068 1.068 0 0 0-.663-.278H3.531c-.214 0-.51.128-.656.285L1.276 5.296c-.146.157-.266.46-.266.675v1.06l-.001.003v6.983c0 .646.524 1.17 1.17 1.17h11.643a1.17 1.17 0 0 0 1.17-1.17v-8.18a1.17 1.17 0 0 0-1.17-1.169zm-5.982 8.63a3.395 3.395 0 1 1 0-6.79 3.395 3.395 0 0 1 0 6.79zm0-5.787a2.392 2.392 0 1 0 0 4.784 2.392 2.392 0 0 0 0-4.784z">
+                                        </path>
+                                      </svg></span></div><span dir="auto"
+                                    class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">Photo</span>
+                                </span></div>
+                              <div role="gridcell" aria-colindex="1" class="_1i_wG">
+                                <span></span><span></span><span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ldL67 _3sh5K">
+          <div id="main" class="_3xTHG" data-testid="conversation-panel-wrapper">
+            <div class="_1PzAL" data-asset-chat-background-dark="true" style="opacity: 0.06;"></div>
+            <header class="_23P3O">
+              <div class="_2YnE3" title="Profile Details" role="button">
+                <div class="_3GlyB" style="height: 40px; width: 40px;">
+                  <div class="_1lPgH"><span data-testid="default-group" data-icon="default-group" class=""><svg
+                        width="212" height="212" viewBox="0 0 212 212" fill="none" class="">
+                        <path class="background"
+                          d="M105.946.25C164.318.25 211.64 47.596 211.64 106s-47.322 105.75-105.695 105.75C47.571 211.75.25 164.404.25 106S47.571.25 105.946.25Z"
+                          fill="#DFE5E7"></path>
+                        <path class="primary" clip-rule="evenodd"
+                          d="M102.282 77.286c0 10.671-8.425 19.285-18.94 19.285s-19.003-8.614-19.003-19.285C64.339 66.614 72.827 58 83.342 58s18.94 8.614 18.94 19.286Zm48.068 2.857c0 9.802-7.738 17.714-17.396 17.714-9.658 0-17.454-7.912-17.454-17.714s7.796-17.715 17.454-17.715c9.658 0 17.396 7.913 17.396 17.715Zm-67.01 29.285c-14.759 0-44.34 7.522-44.34 22.5v11.786c0 3.536 2.85 4.286 6.334 4.286h76.012c3.484 0 6.334-.75 6.334-4.286v-11.786c0-14.978-29.58-22.5-44.34-22.5Zm43.464 1.425c.903.018 1.681.033 2.196.033 14.759 0 45 6.064 45 21.043v9.642c0 3.536-2.85 6.429-6.334 6.429h-32.812c.697-1.993 1.141-4.179 1.141-6.429l-.245-10.5c0-9.561-5.614-13.213-11.588-17.1-1.39-.904-2.799-1.821-4.162-2.828a.843.843 0 0 1-.059-.073.594.594 0 0 0-.194-.184c1.596-.139 4.738-.078 7.057-.033Z">
+                        </path>
+                      </svg></span></div><img src="./WhatsApp_files/254795606_864274470945224_8063490740673825025_n.jpg"
+                    alt="" draggable="false" class="_8hzr9 M0JmA i0jNr" style="visibility: visible;">
+                </div>
+              </div>
+              <div class="_24-Ff" role="button">
+                <div class="_2rlF7">
+                  <div class="_21nHd"><span dir="auto" title="שם הקבוצה"
+                      class="ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr">שם הקבוצה </span>
+                  </div>
+                </div>
+                <div class="zzgSd _3e6xi"><span
+                    title="+1 (845) 659-7224, +33 6 09 04 74 48, +972 50-206-0032, +972 50-222-9023, +972 50-234-7646, +972 50-239-2888, +972 50-244-1468, +972 50-257-2032, +972 50-265-0033, +972 50-277-9485, +972 50-302-9674, +972 50-305-7172, +972 50-335-5834, +972 50-354-3545, +972 50-363-0031, +972 50-367-4893, +972 50-370-4028, +972 50-404-3392, +972 50-408-3452, +972 50-408-4773, +972 50-432-7247, +972 50-472-2119, +972 50-507-2085, +972 50-507-2240, +972 50-524-6117, +972 50-544-9271, +972 50-546-9175, +972 50-572-3250, +972 50-577-1057, +972 50-588-5444, +972 50-620-8188, +972 50-631-2362, +972 50-643-2200, +972 50-651-5642, +972 50-656-9845, +972 50-712-9957, +972 50-713-9002, +972 50-722-7093, +972 50-725-0201, +972 50-732-7907, +972 50-741-4667, +972 50-759-0655, +972 50-831-3823, +972 50-889-2900, +972 50-899-9058, +972 50-972-3702, +972 50-976-0031, +972 50-990-9795, +972 50-992-1211, +972 51-223-0372, +972 52-221-3307, +972 52-222-2539, +972 52-229-7265, +972 52-234-9089, +972 52-247-0368, +972 52-278-2101, +972 52-278-3657, +972 52-286-2445, +972 52-296-2359, +972 52-300-3720, +972 52-311-4399, +972 52-312-9815, +972 52-314-0176, +972 52-325-6295, +972 52-326-0596, +972 52-327-3736, +972 52-332-8078, +972 52-340-9339, +972 52-348-4841, +972 52-355-8018, +972 52-360-5563, +972 52-364-1175, +972 52-389-8468, +972 52-405-5613, +972 52-416-1009, +972 52-432-6010, +972 52-436-8221, +972 52-455-9202, +972 52-456-8269, +972 52-504-0519, +972 52-504-7400, +972 52-524-7490, +972 52-528-7192, +972 52-552-8677, +972 52-555-0654, +972 52-562-2323, +972 52-591-8305, +972 52-599-6609, +972 52-605-6788, +972 52-607-0927, +972 52-609-5257, +972 52-610-8100, +972 52-628-3559, +972 52-630-2001, +972 52-638-2579, +972 52-654-3590, +972 52-662-2772, +972 52-665-1164, +972 52-670-2060, +972 52-675-5764, +972 52-684-8402, +972 52-688-1817, +972 52-690-3395, +972 52-700-3251, +972 52-723-7311, +972 52-744-9992, +972 52-761-0620, +972 52-775-6979, +972 52-797-4793, +972 52-808-3315, +972 52-813-5070, +972 52-820-2149, +972 52-826-1411, +972 52-846-8457, +972 52-849-8889, +972 52-857-4051, +972 52-859-6343, +972 52-880-1633, +972 52-883-0918, +972 52-885-2839, +972 52-887-2270, +972 52-896-5100, +972 52-969-3342, +972 53-227-0995, +972 53-233-3899, +972 53-246-9149, +972 53-301-7995, +972 53-331-3215, +972 53-335-2227, +972 53-336-8444, +972 53-340-6722, +972 53-395-9427, +972 53-422-5010, +972 53-452-4841, +972 53-474-2270, +972 53-522-9278, +972 53-620-0009, +972 53-674-0751, +972 53-701-1073, +972 53-756-6660, +972 53-767-8781, +972 53-795-5831, +972 53-831-3197, +972 53-930-5201, +972 53-932-6571, +972 53-941-0049, +972 54-211-6256, +972 54-221-2059, +972 54-229-9151, +972 54-246-6127, +972 54-253-1151, +972 54-258-3020, +972 54-261-1652, +972 54-311-3653, +972 54-330-2873, +972 54-332-0700, +972 54-336-4991, +972 54-340-2044, +972 54-341-8643, +972 54-397-5685, +972 54-420-2152, +972 54-423-7114, +972 54-424-3889, +972 54-430-2287, +972 54-433-3084, +972 54-440-4295, +972 54-448-7645, +972 54-451-0232, +972 54-453-2527, +972 54-456-7129, +972 54-459-3548, +972 54-460-5339, +972 54-485-2422, +972 54-485-7204, +972 54-493-9260, +972 54-497-0837, +972 54-498-9826, +972 54-522-0606, +972 54-537-2219, +972 54-544-1516, +972 54-545-4196, +972 54-557-1979, +972 54-562-8060, +972 54-563-3612, +972 54-565-5690, +972 54-570-2840, +972 54-577-0585, +972 54-593-9910, +972 54-595-8946, +972 54-600-0071, +972 54-601-4584, +972 54-620-7641, +972 54-621-4960, +972 54-631-1325, +972 54-632-5303, +972 54-644-2744, +972 54-650-9884, +972 54-651-7767, +972 54-666-9270, +972 54-669-6718, +972 54-679-6001, +972 54-680-9388, +972 54-690-3338, +972 54-698-0212, +972 54-720-5103, +972 54-735-9404, +972 54-736-6785, +972 54-752-0465, +972 54-769-2760, +972 54-771-2754, +972 54-787-7101, +972 54-798-0244, +972 54-800-9040, +972 54-807-0987, +972 54-814-4624, +972 54-815-3831, +972 54-818-4428, +972 54-864-2040, +972 54-873-0252, +972 54-880-5478, +972 54-888-4115, +972 54-909-1134, +972 54-920-2833, +972 54-954-7333, +972 54-959-8271, +972 54-976-1574, +972 54-988-6382, +972 54-989-8108, +972 54-991-2100, +972 55-330-4002, +972 55-551-6102, +972 55-557-0912, +972 55-669-4083, +972 55-669-4456, +972 55-669-8636, +972 55-686-9640, +972 55-689-3246, +972 55-887-4073, +972 55-910-7336, +972 55-919-3646, +972 55-920-2920, +972 55-974-9537, +972 55-999-1261, +972 58-434-5316, +972 58-488-8465, +972 58-556-7488, +972 58-663-3029, +972 58-745-5567, +972 58-766-2620, You"
+                    class="_2YPr_ i0jNr selectable-text copyable-text">You and others</span></div>
+              </div>
+              <div class="_1yNrt">
+                <div class="_1QVfy _3UaCz">
+                  <div class="_2cNrC">
+                    <div aria-disabled="false" role="button" tabindex="0" class="_26lC3" data-tab="6" title="Search…"
+                      aria-label="Search…"><span data-testid="search-alt" data-icon="search-alt" class=""><svg
+                          viewBox="0 0 24 24" width="24" height="24" class="">
+                          <path fill="currentColor"
+                            d="M15.9 14.3H15l-.3-.3c1-1.1 1.6-2.7 1.6-4.3 0-3.7-3-6.7-6.7-6.7S3 6 3 9.7s3 6.7 6.7 6.7c1.6 0 3.2-.6 4.3-1.6l.3.3v.8l5.1 5.1 1.5-1.5-5-5.2zm-6.2 0c-2.6 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2 4.6-4.6 4.6z">
+                          </path>
+                        </svg></span></div><span></span>
+                  </div>
+                  <div>
+                    <div class="_2cNrC" data-testid="conversation-menu-button">
+                      <div aria-disabled="false" role="button" tabindex="0" class="_26lC3" data-tab="6" title="Menu"
+                        aria-label="Menu"><span data-testid="menu" data-icon="menu" class=""><svg viewBox="0 0 24 24"
+                            width="24" height="24" class="">
+                            <path fill="currentColor"
+                              d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z">
+                            </path>
+                          </svg></span></div><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header><span class="_2Um41"></span>
+            <div class="_2Um41"><span></span></div>
+            <div class="_2gzeB">
+              <div class="tm2tP copyable-area"><span></span>
+                <div class="_27Uai"><span></span></div>
+                <div class="_33LGR" tabindex="0">
+                  <div class="_2AL2u"></div>
+                  <div class="_3M3aq _3KRR6">
+                    <div class="i_Uj- _314Zr">
+                      <div class="_3Nclq">
+                        <div class="_3AJEj">Use WhatsApp on your phone to see older chat messages.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="tvf2evcx oq44ahr5 lb5m6g5c e3u7tipa" style="height: 0px;"></div>
+            <footer class="_2cYbV">
+              <div class="_2BU3P tm2tP copyable-area">
+                <div class="_1SEwr"><span></span><span>
+                    <div class="_6h3Ps">
+                      <div class="_3HQNh _1un-p">
+                        <div data-state="closed" class="g0rxnol2 p357zi0d d1pdhp1p bugiwsl0 rj4tx0cq cx8fzybs fyy3ld6e">
+                          <button tabindex="-1"
+                            class="lhggkp7q mvj9yovn f804f6gw fyy3ld6e svlsagor dntxsmpk ixn6u0rb s2vc4xk1 o0wkt7aw t1844p82 esbo3we0 qizq0yyl axi1ht8l eg0stril"
+                            aria-label="Close panel">
+                            <div class="b9l0eqez ojci89ib inogquss akljc1zx"><span data-testid="x" data-icon="x"
+                                class=""><svg viewBox="0 0 24 24" width="24" height="24" class="">
+                                  <path fill="currentColor"
+                                    d="m19.1 17.2-5.3-5.3 5.3-5.3-1.8-1.8-5.3 5.4-5.3-5.3-1.8 1.7 5.3 5.3-5.3 5.3L6.7 19l5.3-5.3 5.3 5.3 1.8-1.8z">
+                                  </path>
+                                </svg></span></div>
+                          </button><button tabindex="-1"
+                            class="lhggkp7q mvj9yovn f804f6gw fyy3ld6e svlsagor dntxsmpk ixn6u0rb s2vc4xk1 o0wkt7aw t1844p82 esbo3we0 qizq0yyl b9fczbqn oybnjv0e"
+                            aria-label="Open emojis panel" data-tab="10" style="transform: translateX(0px);">
+                            <div class=""><span data-testid="smiley" data-icon="smiley" class=""><svg
+                                  viewBox="0 0 24 24" width="24" height="24" class="ekdr8vow dhq51u3o">
+                                  <path fill="currentColor"
+                                    d="M9.153 11.603c.795 0 1.439-.879 1.439-1.962s-.644-1.962-1.439-1.962-1.439.879-1.439 1.962.644 1.962 1.439 1.962zm-3.204 1.362c-.026-.307-.131 5.218 6.063 5.551 6.066-.25 6.066-5.551 6.066-5.551-6.078 1.416-12.129 0-12.129 0zm11.363 1.108s-.669 1.959-5.051 1.959c-3.505 0-5.388-1.164-5.607-1.959 0 0 5.912 1.055 10.658 0zM11.804 1.011C5.609 1.011.978 6.033.978 12.228s4.826 10.761 11.021 10.761S23.02 18.423 23.02 12.228c.001-6.195-5.021-11.217-11.216-11.217zM12 21.354c-5.273 0-9.381-3.886-9.381-9.159s3.942-9.548 9.215-9.548 9.548 4.275 9.548 9.548c-.001 5.272-4.109 9.159-9.382 9.159zm3.108-9.751c.795 0 1.439-.879 1.439-1.962s-.644-1.962-1.439-1.962-1.439.879-1.439 1.962.644 1.962 1.439 1.962z">
+                                  </path>
+                                </svg></span></div>
+                          </button><button tabindex="-1"
+                            class="lhggkp7q mvj9yovn f804f6gw fyy3ld6e svlsagor dntxsmpk ixn6u0rb s2vc4xk1 o0wkt7aw t1844p82 esbo3we0 qizq0yyl axi1ht8l oybnjv0e"
+                            aria-label="Open gif panel" style="transform: translateX(0px);">
+                            <div class=""><span data-testid="gif" data-icon="gif" class=""><svg viewBox="0 0 24 24"
+                                  width="24" height="24" class="ekdr8vow dhq51u3o">
+                                  <path fill="currentColor"
+                                    d="m13.177 12.013-.001-.125v-1.053c0-.464 0-.827-.002-1.178a.723.723 0 0 0-.557-.7.715.715 0 0 0-.826.4c-.05.115-.072.253-.073.403-.003 1.065-.003 1.917-.002 3.834v.653c0 .074.003.136.009.195a.72.72 0 0 0 .57.619c.477.091.878-.242.881-.734.002-.454.003-.817.002-1.633l-.001-.681zm-3.21-.536a35.751 35.751 0 0 0-1.651-.003c-.263.005-.498.215-.565.48a.622.622 0 0 0 .276.7.833.833 0 0 0 .372.104c.179.007.32.008.649.005l.137-.001v.102c-.001.28-.001.396.003.546.001.044-.006.055-.047.081-.242.15-.518.235-.857.275-.767.091-1.466-.311-1.745-1.006a2.083 2.083 0 0 1-.117-1.08 1.64 1.64 0 0 1 1.847-1.41c.319.044.616.169.917.376.196.135.401.184.615.131a.692.692 0 0 0 .541-.562c.063-.315-.057-.579-.331-.766-.789-.542-1.701-.694-2.684-.482-2.009.433-2.978 2.537-2.173 4.378.483 1.105 1.389 1.685 2.658 1.771.803.054 1.561-.143 2.279-.579.318-.193.498-.461.508-.803.014-.52.015-1.046.001-1.578-.009-.362-.29-.669-.633-.679zM18 4.25H6A4.75 4.75 0 0 0 1.25 9v6A4.75 4.75 0 0 0 6 19.75h12A4.75 4.75 0 0 0 22.75 15V9A4.75 4.75 0 0 0 18 4.25zM21.25 15A3.25 3.25 0 0 1 18 18.25H6A3.25 3.25 0 0 1 2.75 15V9A3.25 3.25 0 0 1 6 5.75h12A3.25 3.25 0 0 1 21.25 9v6zm-2.869-6.018H15.3c-.544 0-.837.294-.837.839V14.309c0 .293.124.525.368.669.496.292 1.076-.059 1.086-.651.005-.285.006-.532.004-1.013v-.045l-.001-.46v-.052h1.096l1.053-.001a.667.667 0 0 0 .655-.478c.09-.298-.012-.607-.271-.757a.985.985 0 0 0-.468-.122 82.064 82.064 0 0 0-1.436-.006h-.05l-.523.001h-.047v-1.051h1.267l1.22-.001c.458-.001.768-.353.702-.799-.053-.338-.35-.56-.737-.561z">
+                                  </path>
+                                </svg></span></div>
+                          </button><button tabindex="-1"
+                            class="lhggkp7q mvj9yovn f804f6gw fyy3ld6e svlsagor dntxsmpk ixn6u0rb s2vc4xk1 o0wkt7aw t1844p82 esbo3we0 qizq0yyl axi1ht8l oybnjv0e"
+                            aria-label="Open sticker panel" style="transform: translateX(0px);">
+                            <div class=""><span data-testid="sticker" data-icon="sticker" class=""><svg
+                                  viewBox="0 0 24 24" width="24" height="24" class="ekdr8vow dhq51u3o">
+                                  <path fill="currentColor"
+                                    d="M21.799 10.183c-.002-.184-.003-.373-.008-.548-.02-.768-.065-1.348-.173-1.939a6.6 6.6 0 0 0-.624-1.87 6.24 6.24 0 0 0-1.171-1.594 6.301 6.301 0 0 0-1.614-1.159 6.722 6.722 0 0 0-1.887-.615c-.59-.106-1.174-.15-1.961-.171-.318-.008-3.607-.012-4.631 0-.798.02-1.383.064-1.975.17a6.783 6.783 0 0 0-1.888.616 6.326 6.326 0 0 0-2.785 2.753 6.658 6.658 0 0 0-.623 1.868c-.107.591-.152 1.186-.173 1.941-.008.277-.016 2.882-.016 2.882 0 .52.008 1.647.016 1.925.02.755.066 1.349.172 1.938.126.687.33 1.3.624 1.871.303.59.698 1.126 1.173 1.595a6.318 6.318 0 0 0 1.614 1.159 6.786 6.786 0 0 0 2.146.656c.479.068.833.087 1.633.108.035.001 2.118-.024 2.578-.035a6.873 6.873 0 0 0 4.487-1.811 210.877 210.877 0 0 0 2.928-2.737 6.857 6.857 0 0 0 2.097-4.528l.066-1.052.001-.668c.001-.023-.005-.738-.006-.755zm-3.195 5.92c-.79.757-1.784 1.684-2.906 2.716a5.356 5.356 0 0 1-2.044 1.154c.051-.143.116-.276.145-.433.042-.234.06-.461.067-.74.003-.105.009-.789.009-.789.013-.483.042-.865.107-1.22.069-.379.179-.709.336-1.016.16-.311.369-.595.621-.844.254-.252.542-.458.859-.617.314-.158.65-.268 1.037-.337a8.127 8.127 0 0 1 1.253-.106s.383.001.701-.003a4.91 4.91 0 0 0 .755-.066c.186-.034.348-.105.515-.169a5.35 5.35 0 0 1-1.455 2.47zm1.663-4.757a1.128 1.128 0 0 1-.615.859 1.304 1.304 0 0 1-.371.119 3.502 3.502 0 0 1-.52.043c-.309.004-.687.004-.687.004-.613.016-1.053.049-1.502.129a5.21 5.21 0 0 0-1.447.473 4.86 4.86 0 0 0-2.141 2.115 5.088 5.088 0 0 0-.479 1.434 9.376 9.376 0 0 0-.131 1.461s-.006.684-.008.777c-.006.208-.018.37-.043.511a1.154 1.154 0 0 1-.626.86c-.072.036-.168.063-.37.098-.027.005-.25.027-.448.031-.021 0-1.157.01-1.192.009-.742-.019-1.263-.046-1.668-.126a5.27 5.27 0 0 1-1.477-.479 4.823 4.823 0 0 1-2.127-2.1 5.141 5.141 0 0 1-.482-1.453c-.09-.495-.13-1.025-.149-1.71a36.545 36.545 0 0 1-.012-.847c-.003-.292.005-3.614.012-3.879.02-.685.061-1.214.151-1.712a5.12 5.12 0 0 1 .481-1.45c.231-.449.53-.856.892-1.213.363-.36.777-.657 1.233-.886a5.26 5.26 0 0 1 1.477-.479c.503-.09 1.022-.129 1.74-.149a342.03 342.03 0 0 1 4.561 0c.717.019 1.236.058 1.737.148a5.263 5.263 0 0 1 1.476.478 4.835 4.835 0 0 1 2.126 2.098c.228.441.385.913.482 1.453.091.499.131 1.013.15 1.712.008.271.014 1.098.014 1.235a2.935 2.935 0 0 1-.037.436z">
+                                  </path>
+                                </svg></span></div>
+                          </button>
+                        </div>
+                        <div class="_2jitM">
+                          <div class="_2cNrC">
+                            <div aria-disabled="false" role="button" tabindex="0" class="_26lC3" data-tab="10"
+                              title="Attach" aria-label="Attach"><span data-testid="clip" data-icon="clip" class=""><svg
+                                  viewBox="0 0 24 24" width="24" height="24" class="">
+                                  <path fill="currentColor"
+                                    d="M1.816 15.556v.002c0 1.502.584 2.912 1.646 3.972s2.472 1.647 3.974 1.647a5.58 5.58 0 0 0 3.972-1.645l9.547-9.548c.769-.768 1.147-1.767 1.058-2.817-.079-.968-.548-1.927-1.319-2.698-1.594-1.592-4.068-1.711-5.517-.262l-7.916 7.915c-.881.881-.792 2.25.214 3.261.959.958 2.423 1.053 3.263.215l5.511-5.512c.28-.28.267-.722.053-.936l-.244-.244c-.191-.191-.567-.349-.957.04l-5.506 5.506c-.18.18-.635.127-.976-.214-.098-.097-.576-.613-.213-.973l7.915-7.917c.818-.817 2.267-.699 3.23.262.5.501.802 1.1.849 1.685.051.573-.156 1.111-.589 1.543l-9.547 9.549a3.97 3.97 0 0 1-2.829 1.171 3.975 3.975 0 0 1-2.83-1.173 3.973 3.973 0 0 1-1.172-2.828c0-1.071.415-2.076 1.172-2.83l7.209-7.211c.157-.157.264-.579.028-.814L11.5 4.36a.572.572 0 0 0-.834.018l-7.205 7.207a5.577 5.577 0 0 0-1.645 3.971z">
+                                  </path>
+                                </svg></span></div><span></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="_2lMWa">
+                        <div tabindex="-1" class="p3_M1">
+                          <div tabindex="-1" class="_1UWac _1LbR4">
+                            <div class="_2vbn4" style="visibility: visible;">Type a message</div>
+                            <div title="Type a message" role="textbox" class="_13NKt copyable-text selectable-text"
+                              contenteditable="true" data-tab="10" dir="ltr" spellcheck="true"></div>
+                          </div>
+                        </div>
+                        <div class="_3HQNh _1Ae7k"><button class="_30ggS" aria-label="Voice message" data-tab="11"><span
+                              data-testid="ptt" data-icon="ptt" class=""><svg viewBox="0 0 24 24" width="24" height="24"
+                                class="">
+                                <path fill="currentColor"
+                                  d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z">
+                                </path>
+                              </svg></span></button></div>
+                      </div>
+                    </div>
+                  </span></div>
+              </div>
+              <div class="_3A_K1">
+                <div class="_33f6r">
+                  <div class="_3Bc7H"></div>
+                  <div class="_3Bc7H"></div>
+                  <div class="_3Bc7H"></div>
+                  <div class="_3Bc7H"></div>
+                  <div class="_3Bc7H"></div>
+                  <div class="_3Bc7H"></div>
+                </div>
+              </div>
+              <div class="_57r8B"></div>
+            </footer><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="hard_expire_time" data-time="1664903215.973"></div>
+  <link rel="preload" crossorigin="anonymous" as="fetch"
+    href="https://web.whatsapp.com/binary-transparency-manifest-2.2212.5.json"
+    id="binary-transparency-manifest-preload">
+  <script src="./WhatsApp_files/libsignal-protocol-c387645.min.js"></script>
+  <script defer="defer" src="./WhatsApp_files/runtime.03edeb3be16ffd24c39b.js"></script>
+  <script
+    data-binary-transparency-hash-key="inline-js-11560124cb71e8b84040e40f032b5c463078e898505c87a69786f29558d1037c">/*! Copyright (c) 2022 WhatsApp Inc. All Rights Reserved. */
+      (self.webpackChunkwhatsapp_web_client = self.webpackChunkwhatsapp_web_client || []).push([[5617], { 95318: e => { e.exports = function (e) { return e && e.__esModule ? e : { default: e } }, e.exports.default = e.exports, e.exports.__esModule = !0 }, 45095: (e, t) => { "use strict"; Object.defineProperty(t, "__esModule", { value: !0 }), t.default = function (e) { let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "?"; if (null == e) throw new Error("Unexpected null or undefined: " + t); return e } }, 20289: (e, t) => { "use strict"; Object.defineProperty(t, "__esModule", { value: !0 }), t.UPLOAD_TO_CLB = t.TICKET_URL = t.LOG_SIZE = t.CLB_URL = t.CLB_TOKEN = t.CLB_CHECK_URL = void 0, t.CLB_CHECK_URL = "https://crashlogs.whatsapp.net/wa_fls_upload_check", t.CLB_TOKEN = "1063127757113399|745146ffa34413f9dbb5469f5370b7af", t.CLB_URL = "https://crashlogs.whatsapp.net/wa_clb_data", t.TICKET_URL = "https://web.whatsapp.com/web-contact-us"; let n = 0; n = 1, t.UPLOAD_TO_CLB = 1, t.LOG_SIZE = 4999 }, 57977: (e, t) => { "use strict"; Object.defineProperty(t, "__esModule", { value: !0 }), t.getDistribution = function () { let e = "unknown"; return e = "prod", "web_prod" }, t.getLogUserAgent = function (e) { let t, { appVersion: n, browser: r, device: o } = e; return t = "Web/" + r, `WhatsApp/${n} ${t} Device/${o}` } }, 46722: (e, t, n) => { "use strict"; var r = n(95318), o = r(n(45095)), a = n(20289), s = n(57977), c = r(n(4285)), l = n(4617); function i(e) { !function (e, t) { const n = window.navigator.userAgent; if (n === p && e.includes("getElementsByTagName")) return; const r = new FormData, i = new Blob([e], { type: "text/plain" }); r.append("from_jid", function () { if (f) return f; try { f = JSON.parse((0, o.default)(c.default, "localStorage").getItem(d)), f && (f = f.replace("-", "")) } catch (e) { } if (!f) { f = "unknown" + Math.floor(1e10 * Math.random()); const e = f; try { (0, o.default)(c.default, "localStorage").setItem(d, JSON.stringify(e)) } catch (e) { } } return (0, o.default)(f, "id") }()), r.append("agent", (0, s.getLogUserAgent)((0, l.parseUASimple)(n, "2.2212.5"))), r.append("file", i, "logs.txt"), r.append("tags", "load"); const u = new XMLHttpRequest, _ = a.CLB_URL + "?access_token=" + encodeURIComponent(a.CLB_TOKEN); u.open("POST", _, !0), u.send(r) }(e) } function u(e) { let { error: t, reason: n, stack: r } = e; const o = (new Date).toISOString(); return `${o}: error: ${t}\n${o}: reason for logs: ${n}\n${o}: userAgent: ${window.navigator.userAgent}\n${r}` } null == window.onerror && (window.onerror = function (e, t, n) { const r = t.split("?")[0]; return "Uncaught SyntaxError: Unexpected token '<'" === e ? (function (e) { i(u({ error: "failed to load a js or css bundle", reason: `failed to load [${e.split("/")[3].replace(/^\//, "")}]`, stack: "" })) }(r), !0) : (i(u({ error: e, reason: `Error at [${r}:${n}]`, stack: "" })), !1) }); const d = "WAUnknownID", p = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"; let f }, 4617: (e, t) => { "use strict"; function n(e) { return e.includes("windows") ? "Windows" : e.includes("mac") ? "Mac OS" : e.includes("linux") ? "Linux" : "Unparsed" } Object.defineProperty(t, "__esModule", { value: !0 }), t.parseUASimple = function (e, t) { const r = e.toLowerCase(); return { browser: s(r), device: n(r), appVersion: t } }; const r = /(chrome|firefox)\/([\w\.]+)/i, o = /(edge|opr)\/([\w\.]+)/i, a = { chrome: "Chrome", edge: "Edge", opr: "Opera", firefox: "Firefox" }; function s(e) { const t = e.match(o) || e.match(r); return null == t ? "Unparsed" : `${a[t[1]]} ${t[2]}` } }, 4285: (e, t) => { "use strict"; let n; Object.defineProperty(t, "__esModule", { value: !0 }), t.default = void 0; try { n = window.localStorage } catch (e) { } var r = n; t.default = r } }, e => { "use strict"; e(e.s = 46722) }])</script>
+  <script defer="defer" src="./WhatsApp_files/vendor1_bootstrap_qr.d16f7b9f073b657b8f2a.js"></script>
+  <script defer="defer" src="./WhatsApp_files/bootstrap_qr.8e365468263647825bd5.js"></script>
+  <script
+    data-binary-transparency-hash-key="inline-js-9c8cd3d0f4d5af8c7f5cd1c45208edd308bfe472e353a50e4cbacbf6cb58627c">(i => { const l = document.getElementById(i); l && fetch(l.href).then(b => b.text()).then(code => { const script = document.createElement('script'); script.id = 'binary-transparency-manifest'; script.type = 'application/json'; script.innerHTML = code; document.body.append(script); }); })('binary-transparency-manifest-preload');</script>
+  <script id="binary-transparency-manifest" type="application/json">{
+  "version": "2.2212.5",
+  "hash_function": "SHA256",
+  "root": "0xe8dd9baa974f6dff59842c6700343707487d5b62a9ae0de22841865e8297285b",
+  "leaves": [
+    "0x00d2ab32fbc017411cc0c5a0c6b8ef109cad49397d70e77cbfe19c40b5a1de43",
+    "0x01483e41dc7217421449beef71727ce32ce8019f103e9bfb3c3394e2cb81da42",
+    "0x02722169cfe549b5987992bbaae77b38732c3b2ef98b41624b8a0b1a51c114d4",
+    "0x02f41009b087e176c16917345dfc3fd896d69c18655d0fca2a4028bdd3abe35f",
+    "0x04313fc0c060bc26aff973ce2a24803e54c20ab98d2a0184cc31a4a7d42061c1",
+    "0x0456dbcd68e505305dbdd1895289b6cc494d37ad6745c605293012cbd949b86f",
+    "0x06aab520b78caf1e0d660dc9cd5a68828740330f1d732706966eec59aa55faa1",
+    "0x06fe331789c891b16265c13bd9fc93b3a57c7c5989025be1c29604e8ead3fcc5",
+    "0x08553f88112cfef7e8068b931e3d47323c08f319dc3a6dffcf095651e571df04",
+    "0x087cf1df2e4c19506cc739f4e8f03cfc3d61c71dab15dc45b029d852e868bc7b",
+    "0x0b04bb786e18b6314bf9c52c55b6a8f586cdda19a31a5a4e0a1147d70bd311a5",
+    "0x0b0d540d1d57778eb8a716c70af5e3711e86cd6c9f955e95073c5b9783e17d45",
+    "0x0b134bf059a9d892d93a0f43f11c3db81a80cde4ae2360a3519a3fb38456646d",
+    "0x0b4a071786abab6466f958023804e4f40e29cb0dd449d6e6b61c5c8b5337b9ef",
+    "0x0b7b2a4a37b4d73aa5553c3c71a42000d544b3d8c0824bbcaa9b4fb2d335e015",
+    "0x0c2f4e61f43036728120d575bf0bcc09e933c0dcba47d0f6e2f82a2cf54a2a67",
+    "0x0d00916240350bbdbbd7286ca30ecc5ebec7ac1baa12b8415cdd45ffb0dba2d0",
+    "0x0dd895c0c90863b58fcbb42b34fc47f5d5d8f38d2b70b7b198329c1abc5ea0f8",
+    "0x0e8dda27268c107183dd1ed676ff3e1b5a04376c3f27b91fcef2f9af90ecfd07",
+    "0x0f7b4ebe0bcf3ac6638d18d52c05f6b7a9a191c0a7596a046e10efefe062fe98",
+    "0x10479850e2fe006a728418d4e275c4e950577bdb1a0183c512c4c6aea8a2de96",
+    "0x11560124cb71e8b84040e40f032b5c463078e898505c87a69786f29558d1037c",
+    "0x12016e6c13b76fd881069309513bd0e38ebab16bfd70c76d74b0d9c7b9a855e4",
+    "0x14083ed48aef5726578fbed9ccf6dc4468678cf649cc7ed323dee0b42d9f7134",
+    "0x14545f70425f90ff5093fb48ecbf74cfcc40b4a288548c65a256efae1d457298",
+    "0x147554fd9d23c29dcd3a9938b1d677aa89ea603d088c1e4dc89741ec39b38b6c",
+    "0x14eb46f118131acfcf678c8cd4a40eb7a071a33ac11507f3c4f8ab091a43e34d",
+    "0x157e52c9bbdccd9a6683b6cc07b9e626af72ce28eba86509ebd655ae5d0d2d40",
+    "0x16ff684dd45666d7debb2e9dc2ad0f4b9bae83201365b1fccf5d44ee6661fd82",
+    "0x186bd087069eb47c7bc6649bc6283f2f6b4d26651fcae05c4d64c28780cfeff9",
+    "0x1c485000218e4c908d0c3a936b3410533170e0c82be273c2b05a0ef780e76298",
+    "0x1dbce4f3279ccd6185e8570da899e06572abab21abdc5e8b0f9f135820a7aa8e",
+    "0x2110a0f1588a82398aba1ce6b947a88b18d6535b2ea425d7c02291054ef59e59",
+    "0x236d4a05b4613ff909e1c9de456ec2d14f9a1e7e6de66d32d6dc5eaf43c24991",
+    "0x245eb5eb731e66a4a8e2ce67f7102034ee04a52a50755f2751d513a471ffe38b",
+    "0x246c1f6db0668de11b494d03058cebf1bad3ef82a38e443ca4947f0872832e72",
+    "0x2585020802a4b7529bc86a4ac28ec8b6f659775b38630d3074961a834ebf19cc",
+    "0x27c6b51a569e93e4b3c67a85cbfa382613c2b10a8dee17d7793b91d42051a2d5",
+    "0x294ca88ef568f385751cc5f9c6fccf04779d4a526e72af11500fcfd31085ece1",
+    "0x2a39c57ecbdcad6ef28277b36c0d83128e5c326000a1d3f435418e04ee67f792",
+    "0x2df655fa1f86233da11059e3b2ad7879b1d0506fa822235277de7635ebf6554e",
+    "0x2e523f538e0d99c2d5693aed1d8634fbd21b966409ec2bb66feee97d5d4d4ece",
+    "0x2f0042f1a9d04d5cf067890bd8e2da2505a3c078a701add69b8c0bdac83442f9",
+    "0x2f919f66aacd738e620ff2b6e65d78e67bdc8d93861ecb753d05fa7f1839f456",
+    "0x33136214eadfc6b262f2f598aa12b139abc23237333b464556c276fb36db07d4",
+    "0x33ccbc37218f255bb51721925f616162e524d835d8aff2b97c829f72ff623155",
+    "0x3519aecc7c2473c521da04dbdf70b083e5936536ed871f8917bcb2452270acc6",
+    "0x35cf7a64aa5b205b1b85d0d3ac3b577824bcea644d87a16b22ac9b1dd5f0f718",
+    "0x3852323cbe8b2ad4b4906678f9e393a8b5a8053c9330b36bb78d74984365a6d7",
+    "0x389489eb0c8b16e86723d6085a738f9714663577cd27e0c7b96c52287acf8b05",
+    "0x389704e20bf997bedce78a6855bd110edef391b6aa428eb5e68f2ca7dc748086",
+    "0x39bb3aadf56464e294470ca06cf8a1c62c15b2a56d18bbc8381cd90d71c3d832",
+    "0x3ba353697a26cf841d62fb5ddc4e3a4a6c7c404129bdcdd5b20071aef6afbe06",
+    "0x3d05cad77b158d6d92e656d7a1d379d518ec242fb56b1d3238ed55deb6a52b23",
+    "0x3edb4418335c115721c476ae4e9ce6e8d3d8d7584dd4ec8629120d6905042d58",
+    "0x408a1158ebe9ebca4a791df5da2d84c5af7366545a70b96c1c70b6b31fe961c0",
+    "0x4272fa5aeb1340c159cb1ed0550423046846f79c610d9cfe7808c7b7cab820ed",
+    "0x430163d8435bb842a7e7444babfcff2609b5a940017dd383b0a5c8c87267418b",
+    "0x442e3e24dc3b793d4f8aa1ecd250fa3fbc26ce944d2c5e99ef11196393f2a9fc",
+    "0x44a1f84de56692775e8e162ed73d64b6186682d0efab25fe12191da0e9130e2a",
+    "0x44ca699dc267e073d4d9df771f1984cbbdbed8f4c31775c7e0353d016549159a",
+    "0x44db8ebf5296e3046de3baa13eec101840876a907192058ce929503e19c520ee",
+    "0x45f7feb1aafbf0b01fe8976a8a70b979d3d50a098683dee869d293a979283b96",
+    "0x46b77073fbe34ccec01c106347b796711e2b43bb0ebbed16f40ea861c9d49901",
+    "0x49aedf2f633b0b1ca35c6971051885de3554971172db441093d74887819dd104",
+    "0x4b26f6755710827e4d40b00541d1347ef11c92deef8f5bc9b0659a050cb4441f",
+    "0x4b79b6dc91a7ee33373b115991c3eb287ed710cfb6708421b4cab682eddbfcbd",
+    "0x4bcbcafc2be034ba0894f32804cadd4dce3d698eb99aac980071f3d97f57f936",
+    "0x4fbebaaa1ed2eab75961e199dc484b4a208397db3a2315c55afd046d190d28f2",
+    "0x500b2fe1eb701ccd8462d2492364ef6022c52c3c38ec6a8c911d1c7060ca97bd",
+    "0x501b263259ea1ac7d6713b5da49145841d3583ed016b9e4ac5a90f22519755a3",
+    "0x504796866672ede0d371b7fb16d15c52b32c95c2050d1bad1de5f0fccb3f3e20",
+    "0x50b1d4be186c3a982734a46f475faca31f6c409fac163117d93d12e861f06d67",
+    "0x51871f5699e833cfe8a242af06aaa3a636a298106747876591d292f40693fd01",
+    "0x51c5148439a01aa73f72c452d16542c48d4fbd488fdd048a71e69b17c4d3e3da",
+    "0x545a5eeff48dac93520d8e1762e79376f04fa4bc036d473ddc3486564afbc589",
+    "0x550ff34b6193d534d63c3224fc24719637cb2de2ef88523d72374d3d0083e02b",
+    "0x56440a0c043dbc79629c8a0327629c8c4c27643869bb34f0bfcb226c655a34c4",
+    "0x59f0fabdcf93db82fa45f3a3e097a9b6bf412d1fe5d534141cb070e3bb169962",
+    "0x5a6c273172699ee6d475cb42d8ffc140c296ca75f0d3f614e8e98024c2e7469a",
+    "0x5a7b40d1974e8d731895e7843bce87ab3baedec64e62bf9a57bc71a7d8599cbe",
+    "0x5b1235f2bca83cfce673eea3b32949c3e804cab56d6724a641087777aca8f400",
+    "0x5b71ecd0ed55000436ae6824c9e979f659cd9c0050158aaf1790c65b04b742da",
+    "0x5c201d9d055f267701a1a4c4467b4f080c598eb2719146fdefc0985b3cd74e3a",
+    "0x5cb7873e5750a60598d9bcf57b1dda7371a8468e3e6527907d7dee3c9fbf143c",
+    "0x5e1304801f558c0787ea804ea64b605e54080761989cb6017517c639c6567be7",
+    "0x5e1f00a45a6576ad1108a1f20115e7538fdab472cff52a183016e600a2cb572a",
+    "0x5e988908fb81d9594d01979b9095248b029198d842d5987c70479db846f5e404",
+    "0x603343ba8d30d511e25b8c5e682c193d5f46e10628691100e2b36fafa44d1839",
+    "0x60715d35c0d16c5dfa8b2082efcddee1f9fc346ac5ddb0036021dbbe74bcdf1e",
+    "0x62251b7330db0c2391e293666374a800003383e3d3a3747b976184e2086d8bda",
+    "0x62e171a34a9d752526312cad1b6e6b83866cd0f4da1d5269e61c80ffcaecec6a",
+    "0x66f2aad32b154807c6f989132e3beb27c6360b593b4351b967c3c1e7377955d7",
+    "0x66f415e3876cf5998fbd02dd9d49e2dbd91ccd9741ef466cd1ab2c323afd1afb",
+    "0x6a48e52fecc75e39b2dce3dfcae024280167ee7d58c98b2382a783f93ec3b3b9",
+    "0x6a56a07919095d8467dfd10ddaf2fe77877558659e3ca9c119aa77086ebbff8d",
+    "0x6b0ddbf8c04f142f267c4a22d004c5eed60795c410f656dcfd2e76317683bc18",
+    "0x6b6ef9f4944418aa0525e128742bc9f5da80f4fb216b99247a000afc306d468c",
+    "0x6b7cc626fa5f0761cb951d0d2602ac7be200591458dd23d6b6e4f94195988672",
+    "0x6c34fc0abc54833a144613e9b4bd8f5700a549617090eb1fdc1ca80ea1838335",
+    "0x6f477fe5d279b8c26e16b30457ab6b4a4dd58cc7528cda8108e74c58a9e4c640",
+    "0x70ed2a9d999d5305ef5ceb3cc69a064c1a0fd7c4c6ccf9c48d5306259c2c36b4",
+    "0x73da20bcb978ecb635833117ea8ca2babb4cd951cf6a9e139f5eba1d669a6e17",
+    "0x740ce7b9c7ced1ea20c1fc8e2756d6559eee52cfc1427f2a96da67a2e02da991",
+    "0x747fde78cb1d35ac778ec55bca9d424080ff53f660530b92fe88138534721b5c",
+    "0x74b0b1edb073ea8749e89e9a7abaf51776e382f1cf35c1ddb4d9f2e40b0f0893",
+    "0x77e4ad4b2f59b5705de48b0ecd245d3c059eb01347b09dd136334bbbcd895c37",
+    "0x79f38aeedbe56cf791c243398760a4ffcb2732885b4dadb7fb9083f241348927",
+    "0x7b6dab838457316ea01c1ba5500575d9178afd0054654b17726475608e1fd5f5",
+    "0x7be5fe5f628a839e394b89a29f7b6b548ca6e6da711a20f605af2fc63c6b4436",
+    "0x7d8ed6f144babb03c2c71c7ec7ffd72b295723f2bdf4683bb980f025b3e702aa",
+    "0x7ffe9e087718888daaed765be0e7a193b16ab36bb1784a96d7af4df077de7376",
+    "0x817e1c07312c3d7a0837914dd08852fd155497da35c4efd48760a7195bd66ff7",
+    "0x81c10551eca18339306b0a5feb9bbc9be5638351b75f17354f215748a7254ee4",
+    "0x82ab577f71a3159407ac71de6ec22a8d17da553660f2e2e732c7688a3a444829",
+    "0x838197c59cafd53c17c51c914714088fbd5c2b03ba4522e7116eef0533bc46d5",
+    "0x8410cdf0b144d9ed0aafbe63c3e7bf465fe41379c70b171806bb62124a5a0677",
+    "0x851edb2ac8aa1f60d014817a4797f524351b6a4e4b68dc9c02c46251cc646348",
+    "0x866d509259e9d14453548fcca2e8509a49eabcbf7f7261c43ec2f884825620c2",
+    "0x86b762690cb739f1b16fe3dc3b3776a79aa32c2e7a243bb33dd0e2292169dc82",
+    "0x873df8094cdeba56fd959738ab897029d4ec88ce60945e81be4721dea0a1f6e4",
+    "0x8878aaf57b058dfaeb804ed9784629409c683533d11b2c5fee7034afe34b8fa0",
+    "0x8b20664d8ab35b003cb091fdcd6068bef90acfd841ad7e8ab041f61f74f93d52",
+    "0x8beb2c5226df4fd45166506bfc03ba195ae968d4667e2868dc06c764f3ea2073",
+    "0x8c2dfe8145ce740ad9532ac19366ba81c39fdfbfa69b388f4828966c90d3348f",
+    "0x91ead47f87c1f17ee0e481b9b45ac10ba3ac605bef6651a5990a1d30a822a6f8",
+    "0x9209d1aa61d295437334ee768202974a0bd52fdf5da8ddc964b95dca9a5fc2ed",
+    "0x929a534f403ea37e66602d37b706759b5a41d8f6e16422a279bdcb3bb29ab0ef",
+    "0x934686e54493027dbd7149c90503786cdd8d5ab7e390cba24f420eae4c477f11",
+    "0x94425218b5724d7297ba4c87434e21d8407d26f6e2164a70032daf98c40bd452",
+    "0x96d063fc846972caf166dab5ce693e5c378f7e35ccc8e535396d2cffb7e19689",
+    "0x96dc0cc6e033488c49f9da14e8481d1be447aebe07ff2a3e152e84d1087be3aa",
+    "0x9714a31113b9bc6bda73dc9f686e2670a60e51a97561d7822a931b823f8ebab8",
+    "0x9715f770a369fc0a743cc623d1bbe98221fd60c5a6e144246699bd56f527aca9",
+    "0x9796cc025cc26e3ffc5dbac89c2c5aaab32d2408c72932fd34be75d115bcfcdc",
+    "0x9aceb1d6ac964f84b4baabf0174c6b1429bfef9056412de15c23ded484ea8a05",
+    "0x9c8cd3d0f4d5af8c7f5cd1c45208edd308bfe472e353a50e4cbacbf6cb58627c",
+    "0x9d5751d10c00c854d174504a0cc9fba57c04f901f2a2b13f9e39c1e15e472ec7",
+    "0x9d6c081190517c058da52e3212dc427dd83c3a26798c5f5ad3bb04b5a965156d",
+    "0x9e1fec22ccafb3ab6de35be5aa597892c710d8bc50539afcc4f3ff6378af378d",
+    "0xa0cd79b337cac89cf96236637be0a7afb10e15f839f3bf73a970020339d06db3",
+    "0xa1761075abb8addd31b8e78954c1de42c66138643fcb67594acd2625b09fe73b",
+    "0xa17b76d004cff90072d639b1e51be98cb4ce5257a2c86fcf36e5d0fc8ddd39e8",
+    "0xa30830da22311ecc7e0855cea55ad61364eb2498b91ed474d2932eefcbf2b4aa",
+    "0xa6edb8fec59b341581ddcc70e8a3efe1de57bfa7289188aa4bef6c94ce40bc1d",
+    "0xa873b19352aa915ba407498ae852be4d1df2603cbc18f084ff5ca0f0a7ddccfa",
+    "0xaa12fa665fad069edb23616bbead9befe22d78500a0b230795325476434afa6f",
+    "0xaac96be79ff9c17cce3108b5b421ba0e384a6a1d3378b861f66d4c514c057333",
+    "0xaacc3f63be3ee8e95601d504090d461ec8b433be677504a4d488185cabb18447",
+    "0xabdb23639c45babdc882db54dd531b13ca678ceb56763baaba897c1347d57f89",
+    "0xadf045e70050f8d067bacc9f0475c7059e8194a2285e0b8a368d96424c1a5d4c",
+    "0xae6751febc8db69d1176ef6d5d2d0c8990fba07f770fc56de09613bffb2f85d2",
+    "0xae99c733b1b75623b9f891a4c4d24745b83d6ae0cca7c8ce9b3284020cd98df9",
+    "0xaed4eff709118368cd0ff76f8c8e7a755a0ab7326d9fd8c4fc9234628444b6f9",
+    "0xaf507b7860166b0311081ec1819b671c66ba9cf376742543d04682b696228d2e",
+    "0xafe18d13c85387ddfafd7fb6ea7af3092fa195294c749793f6ddf4d3d9a9acaf",
+    "0xafe7714512925e4987ad609d0fbbc64773064b0f46f69dd2842b959a996dfa6f",
+    "0xb06159d2f76e0494a523e93d0b0f44a5391935f50f32b84671f06600deea2efe",
+    "0xb0ba9719722ec4552c78f95d48a7fce8e78a9d47234d2202a29fcb45cd7b495c",
+    "0xb0d50e47643903cadcfe099c0ee51fb2587ab2ac30fb829bdeac223554e425a4",
+    "0xb0ea842f556b25fa89e5810aecb4f46f27b2766422affed8784369b1d833b770",
+    "0xb1a85990a35dcb61c2114e23a0c4bbf6e4529e08ad93f9b6d6250497ab080cda",
+    "0xb326944dd55def7299bfccb717470a84bfbd9f7946fdc48d18edc07add19fe62",
+    "0xb3bbad5659905da1f91efa047f55f4f65c5fe46d1e49d7096f827af78b7a609c",
+    "0xb514cffb064b01ec164078208dd805f00af9cd6886eb16e0dec324d412133a3c",
+    "0xb6aafb3c1bef8aab3727bf219d785d903e59b7f3cb54eec5c0deb316eb32c865",
+    "0xb6ef6e9c2e057b70e97e8ce487906b0dd01f21580937cbd27c4afd5037c2e6bf",
+    "0xb88c2610df778bb7db4f465a01ddfdfb6434acff1a282ecac3a12ebcef3c7e3d",
+    "0xb90f6180c50016fec9ff6a71222623240d619c9a5899a86d133c40971422c9f5",
+    "0xba681b1b4bd5bcba346feffea170462adea99ba317d55fa47a494e5482e4d03e",
+    "0xba683ffa94ae803cc0f2ba0dc3f6d185bff876890df4fbeaeaff0c164d6d88bf",
+    "0xbaac724ad8fd2e0e36977c3af52d6e42fb0adaec6ad1374b25c008d02f2f09ee",
+    "0xbb1dbf6f2fee106145f39e6582cd0c192fe5dea360045b87afd2ede642898659",
+    "0xbced360a2de7dc759b73a41081d9d2ac851dd3290870e69031529b7d53bee590",
+    "0xbee1be87a6464157db5df440335de600771735ce85b6026ad5245fb54df20dd7",
+    "0xc04ac960534140e9be7e0c00f7de4bff02771cd236e8c5bcd366f32db0317def",
+    "0xc0c6571cf2798b1ac0c22b987d4cb8c035b9be7f4687959704967ef4020cc935",
+    "0xc151c0618e9693a188812a8cf324871b25f51c9213dbfd6dba3b5f5cb84835fb",
+    "0xc2eb8dff14694509922b5b48814d077e5d86edfd1235ca86f876276fc19c38e8",
+    "0xc72faa9106cb9994c6ae61e092e29b93d5489bc3f9fc347ca4e4baa589696c68",
+    "0xc8a379c7bb6e108e12742d9f39dd0762548394e87d601f7f76d065e16390896f",
+    "0xca12a05d15b8dfab226a801a49f05082b0d9efa4085403b8e3d1ad355ccc14e4",
+    "0xcb60c48ab13230a3e0fc4abe9e66adcc727ee25d99302880669b996e8dac2976",
+    "0xcbe1d0e463d1076746e5f3d61193c0ed8a75bb17d868ff297d1d5e0a33ab74f5",
+    "0xcc0b84eb7befa0d5fc2b584cd1128f250fcd8bb25b289edfac8502686cd4684e",
+    "0xcc9f5e8f9dc89eb0aafda2a288292d4f4040f677fe4187f722a2be355bfae553",
+    "0xce08313d889fb1ca1d21ae691cc8e9bb5a77b8c034039fa0183ecaf0b003aa2a",
+    "0xced5dd891821fc687319fea4ca379f058f36815410637227ac54c3856943c8d2",
+    "0xd1fc8984ee04d2439479e922003af396ad04809d93b1d21994de75564f0a7ce4",
+    "0xd268c0e6799315d023271f6a56112454ab2cddb54eacf2726b7e572f6eb99674",
+    "0xd3ca848e130d6937ea34e88e517aa1c720968fd2f262a3b4ffb82a434060053f",
+    "0xd3d7ee93eb2c7147a61198e08e9829b42286585a212eab3dfc440d749e0c4659",
+    "0xd62d9fd9475c0f69bb355dd601b246af7a3506f7f02c46b1862fabbcc6357548",
+    "0xd6a0bfdb2f4db01e2ce68dbfbf5e481012efe973076eff134a5ceb2c8a0fb750",
+    "0xd72c3d81b494d6a99a2a7a8ffe7a12a23622b33badcc8d19d3a5455c46086223",
+    "0xd7aeada46090b34db3c915a8c6b09b2a4f3d618e0551fa872531cc25a0bcb720",
+    "0xd8ac3a0805b159bbfa17b27911a6f235ca61ba63f848d451339645c89c084d92",
+    "0xd8de945c989ff3f46335648239f51c1db89c9fd0a188a8aa0f63abd4dda971af",
+    "0xda1c6bd16d84770ac65531c53c241065eaa64bf14e161b849f6a1cf45b5f27f8",
+    "0xdb0d42286fedc321db4e3911f0833cb8ecc7c0f2b4e366d287ba544e7f2f99ee",
+    "0xdd74db287fa57725c81a67b8ea600c1b879ce0a4ae51e73e0fcbb675691cd4ef",
+    "0xdd7f991a89970ddd885c608a6a00d92d50b79f623d3a1b39989eb69445e13e81",
+    "0xe18ca62132d98373d097ad0bce5686802f39b8553a44f3c11fba1ccb3edc23d4",
+    "0xe1ec1ecfed34d2fba27db2e9eb05d02134146e37a8a3a2b5f9c508e660270849",
+    "0xe281b03acb85bb708bedcd7d69ebfa777d628339750980502ff67cab3dee4639",
+    "0xe286bbd2bea3a999643b993df4a7903dbf536d92ef2d17f5658a4b6adee583ac",
+    "0xe28e7c733a54a109ed9e48bce235540d20e7ed9cf675c4c3eb0913fd86ddd6be",
+    "0xe30e2470c151c1115ff74cfbcc5ec6ac47873176510f40b7641095f0480b24c3",
+    "0xe4231f2e3b0d85ed5f5e8d50f03148fc1f609be63374c6537b7e3d3021027714",
+    "0xe6ae9b5e0e88afa9d44e0e01ba3934509a45f8012e14e263d75155e2805ea5a6",
+    "0xead87db6acf34c8156f6ec0f84e1808d3507e3bbd3c9d3ee364f4c8c34967e26",
+    "0xec8763ffa1ae9a3e46a0b3ede5c1c6ff827e5604b667911f810ad561ddcd8e30",
+    "0xecc35fda1372962274ee526e7cf897fb60d1ae753ba34e2d97dfb5fbe9217297",
+    "0xedbb1b0101428800bf613efc8bec3516e6b50496ed8d78e21fcd6c308a8604a4",
+    "0xeea3efac2e4d96a65187fa919a6d8a63ee4a74cf532e96cdee187ec8906c268b",
+    "0xf675a24319bc33639ef28b5d8417eb924a45bbd5792883e84b15e720a68ef23a",
+    "0xf6c1619a8da7ab20b7e52b0a8f888cc325e0238133b86172ee2bb362b723985f",
+    "0xf895550c6eafd31e5f8c8158da76af77062191a09cc06f20fdf267d77d9f1ed9",
+    "0xf8df65cfcb304e129b1ef4733f079b82005a062950e0f32c8a7dabf969ba047d",
+    "0xfba96b4422af5bac563042d92d26893c7ed2fda9f618065a84d3ed749ae715bd",
+    "0xfbdd5e7bc2b8521a6c450fb86b2b90de3d74c27ac43bf1fb5e3b557fcea89537",
+    "0xfc904c6357a15fe296dcdcf9fb9006a89856be42287b64cc1a0b8fc11544e2df",
+    "0xfd027e9ef6f8de9dac807c80582595a8d3c172dbe572b8c0a3bf6aab1c940132",
+    "0xfd0b74ba5b21148a760083af3fcf9e2c809ef01f1c58babe79286e2aea62359a",
+    "0xfd46fdbad10d8a7cec7e66e6f0542e926f4e56fe54f6dae5e907be723266211f",
+    "0xffba5316824894023ff7a51c4ad75b981fa27c39f6de2183d5b6c82477abb1be"
+  ]
+}</script>
+</body>
+<style type="text/css" id="stylebot-css-web.whatsapp.com">
+  .message-in .selectable-text,
+  .message-out .selectable-text {
+    line-height: 1.5rem !important;
+  }
+
+  div._1UWac._1LbR4 ._13NKt {
+    max-height: 200px !important;
+  }
+
+  .dark {
+    --icon-ack: #6dd8ff !important;
+  }
+
+
+  /* text box */
+  ._1Gy50 span {
+    /* color: transparent; */
+  }
+
+  ._1Gy50:hover span {
+    /* color: inherit; */
+  }
+</style>
+
+</html>
