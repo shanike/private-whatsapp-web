@@ -1,9 +1,9 @@
 {
     "name": "Private WhatsApp Web",
-    "description": "Hi! this is Shani. this extension hides/reveals whatsapp web chat list content on demand.\ncontact info: shankehat@gmail.com",
-    "version": "0.0.1",
+    "description": "Hi! this is Shani. this extension hides/reveals whatsapp web chat list content on demand, for more privacy in WhatsApp-Web.\ncontact info: shankehat@gmail.com",
+    "version": "0.0.2",
     "icons": {
-        "128": "icon128.svg"
+        "128": "icon128-white.png"
     },
     "manifest_version": 3,
     "background": {},
