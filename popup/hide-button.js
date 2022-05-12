@@ -13,7 +13,7 @@ hideBtn.onclick = (ev) => {
     }
 
     chrome.storage.sync.set({ autoHideButton: checked });
-    updateAutoHide()
+    updateAutoHide();
 }
 
 function isBool(val) {
@@ -26,7 +26,7 @@ async function updateAutoHide() {
         target: { tabId: tab.id },
         function:
             () => {
-                chrome.storage.sync.get('autoHideButton', ({ autoHideButton }) => {
+                chrome.storage.sync.get(({ autoHideButton }) => {
                     const secretBtn = document.getElementById('chrome_extension_privateWhatsApp__btn');
                     if (autoHideButton) {
                         secretBtn.classList.add('auto-hide');
@@ -37,4 +37,4 @@ async function updateAutoHide() {
                 })
             },
     });
-}
+};

@@ -16,6 +16,12 @@
 /*************************
         on hide:
 *************************/
+.ldL67._2i3T7 #side._1KDb8.hide {
+  /********************************
+            on hide chat-title too
+    ********************************/
+}
+
 .ldL67._2i3T7 #side._1KDb8.hide #chrome_extension_privateWhatsApp__btn:not(.auto-hide) {
   opacity: 1;
 }
@@ -27,7 +33,7 @@
 }
 
 .ldL67._2i3T7 #side._1KDb8.hide ._2EU3r {
-  opacity: 0.7;
+  opacity: 0.5;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
@@ -57,6 +63,10 @@
 .ldL67._2i3T7 #side._1KDb8.hide ._1qB8f:hover .emoji,
 .ldL67._2i3T7 #side._1KDb8.hide ._1qB8f:hover .emoji {
   display: inline-block;
+}
+
+.ldL67._2i3T7 #side._1KDb8.hide.hide-chat-title-too ._3vPI2 {
+  opacity: 0;
 }
 
 /*************************

@@ -5,7 +5,7 @@
   max-width: 350px;
 }
 
-#shani--extension-privateWhatsAppWeb .shani--ul #hide-button {
+#shani--extension-privateWhatsAppWeb .shani--ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,7 +15,7 @@
           flex-direction: row;
 }
 
-#shani--extension-privateWhatsAppWeb .shani--ul #hide-button label {
+#shani--extension-privateWhatsAppWeb .shani--ul li label {
   margin-right: 10px;
 }
 /*# sourceMappingURL=popup.css.map */

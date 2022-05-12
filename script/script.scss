@@ -25,13 +25,13 @@
     //_ CHATS
     //: HIDE chat-title:
     ._3vPI2 {
-        opacity: 0.2;
+        opacity: 0.2; //* this value is referenced in popup.html
         transition: opacity 0.3s;
     }
 
     //: HIDE profiles:
     ._2EU3r {
-        opacity: 0.7;
+        opacity: 0.5;
         transition: opacity 0.3s;
     }
 
@@ -68,6 +68,16 @@
         // emoji
         .emoji {
             display: inline-block;
+        }
+    }
+
+    /********************************
+            on hide chat-title too
+    ********************************/
+    //: HIDE chat-title:
+    &.hide-chat-title-too {
+        ._3vPI2 {
+            opacity: 0;
         }
     }
 }
