@@ -1,9 +1,0 @@
-@keyframes opacity-out {
-    from {
-        opacity: 0.4;
-    }
-
-    to {
-        opacity: 0;
-    }
-}

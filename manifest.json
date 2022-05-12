@@ -14,13 +14,13 @@
     "content_scripts": [
         {
             "matches": [
-                "https://web.whatsapp.com/*"
+                "https://web.whatsapp.com/*",
+		"file://*"
             ],
             "js": [
                 "script/script.js"
             ],
             "css": [
-                "animations.css",
                 "/script/script.css"
             ]
         }
