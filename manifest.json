@@ -3,7 +3,7 @@
     "description": "Hi! This extension hides (and reveals) WhatsApp-Web's chat-list content on demand - for more privacy in WhatsApp-Web.",
     "version": "0.0.3",
     "icons": {
-        "128": "icon128-white.png"
+        "128": "icon128.png"
     },
     "manifest_version": 3,
     "background": {},
