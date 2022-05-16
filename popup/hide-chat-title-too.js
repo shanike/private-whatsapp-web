@@ -28,7 +28,6 @@ async function updateHideTitleToo() {
             () => {
                 const HideChatTitleTooClassName = "hide-chat-title-too";
                 chrome.storage.sync.get(({ hideChatTitleToo }) => {
-                    console.log('hideChatTitleToo: ', hideChatTitleToo);
                     const side = document.querySelectorAll('#side')[0];
                     if (hideChatTitleToo) {
                         side?.classList.add(HideChatTitleTooClassName);
