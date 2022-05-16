@@ -6,6 +6,7 @@ const BtnId = "chrome_extension_privateWhatsApp__btn"; // used in popup/*.js too
 const OptionsClassNames = {
     AutoHide: "auto-hide",
     HideChatTitleToo: "hide-chat-title-too",
+    blurConversations: "blur-conversations"
 }
 
 const headerClickIntervalId = setInterval(() => {
@@ -20,19 +21,26 @@ const headerClickIntervalId = setInterval(() => {
 
     secretBtn.textContent = "secret button";
     secretBtn.id = BtnId;
-    chrome.storage.sync.get(({ autoHideButton, hideChatTitleToo }) => {
+    chrome.storage.sync.get(({ autoHideButton, hideChatTitleToo, blurConversation }) => {
         // Auto Hide Button
         if (autoHideButton) {
             setTimeout(() => secretBtn.classList.add(OptionsClassNames.AutoHide), 100);
         }
         else secretBtn.classList.remove(OptionsClassNames.AutoHide);
+        header.insertBefore(secretBtn, header.children[1])
+
         // Hide Chat Title Too
         if (hideChatTitleToo) {
             setTimeout(() => side.classList.add(OptionsClassNames.HideChatTitleToo), 100);
         }
         else side.classList.remove(OptionsClassNames.HideChatTitleToo);
 
-        header.insertBefore(secretBtn, header.children[1])
+        // Blur Conversation
+        if (blurConversation) {
+            setTimeout(() => document.body.classList.add(OptionsClassNames.blurConversations), 100);
+        }
+        else document.body.classList.remove(OptionsClassNames.blurConversations)
+
     })
 
     secretBtn.onclick = () => {
@@ -41,3 +49,14 @@ const headerClickIntervalId = setInterval(() => {
 
     clearInterval(headerClickIntervalId)
 }, 100);
+
+
+// * not in use
+// const blurChatInterval = setInterval(() => {
+//     const el = document.querySelectorAll('header ._1yNrt ._1QVfy')[0];
+//     const blurChatBtn = document.createElement('button');
+//     blurChatBtn.id = "chrome_extension_privateWhatsApp__blur-chat-button";
+//     blurChatBtn.textContent = "hide messages";
+//     el.appendChild(blurChatBtn);
+//     clearInterval(blurChatInterval);
+// }, 100);

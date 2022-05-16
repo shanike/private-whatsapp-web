@@ -1,0 +1,33 @@
+body.blur-conversations {
+
+    // message-box(s)
+    ._1Gy50 {
+        padding-left: 25px;
+    }
+
+    // message text:
+    ._1Gy50,
+    // contact-name:
+    .hooVq,
+    // quoted msg:
+    .eWQsx {
+        span {
+            transition: filter .2s;
+            filter: blur(4px);
+        }
+
+        &:hover {
+            span {
+                filter: blur(0px);
+                z-index: 1000;
+            }
+        }
+    }
+
+
+    // arrow in message-box
+    ._2copG,
+    ._1UyGr {
+        opacity: .5;
+    }
+}

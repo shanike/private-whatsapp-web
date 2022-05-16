@@ -1,7 +1,7 @@
 {
-    "name": "Private WhatsApp Web",
-    "description": "Hi! This extension hides (and reveals) WhatsApp-Web's chat-list content on demand - for more privacy in WhatsApp-Web.",
-    "version": "0.0.3",
+    "name": "Private WhatsApp™ Web",
+    "description": "Hi! This extension hides (and reveals) WhatsApp Web's chat-list content on demand - for more privacy in WhatsApp Web.",
+    "version": "0.0.4",
     "icons": {
         "128": "icon128.png"
     },
@@ -9,19 +9,19 @@
     "background": {},
     "action": {
         "default_popup": "popup/popup.html",
-        "default_title": "Private WhatsApp Web -\nClick for options!"
+        "default_title": "Private WhatsApp Web -\nClick for Options!"
     },
     "content_scripts": [
         {
             "matches": [
-                "https://web.whatsapp.com/*",
-		"file://*"
+                "https://web.whatsapp.com/*"
             ],
             "js": [
                 "script/script.js"
             ],
             "css": [
-                "/script/script.css"
+                "/script/script.css",
+                "./script/blur-conversations.css"
             ]
         }
     ],

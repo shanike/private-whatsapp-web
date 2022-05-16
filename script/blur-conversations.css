@@ -1,0 +1,28 @@
+body.blur-conversations ._1Gy50 {
+  padding-left: 25px;
+}
+
+body.blur-conversations ._1Gy50 span,
+body.blur-conversations .hooVq span,
+body.blur-conversations .eWQsx span {
+  -webkit-transition: -webkit-filter .2s;
+  transition: -webkit-filter .2s;
+  transition: filter .2s;
+  transition: filter .2s, -webkit-filter .2s;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
+body.blur-conversations ._1Gy50:hover span,
+body.blur-conversations .hooVq:hover span,
+body.blur-conversations .eWQsx:hover span {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  z-index: 1000;
+}
+
+body.blur-conversations ._2copG,
+body.blur-conversations ._1UyGr {
+  opacity: .5;
+}
+/*# sourceMappingURL=blur-conversations.css.map */
