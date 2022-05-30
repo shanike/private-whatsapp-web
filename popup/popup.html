@@ -30,11 +30,20 @@
             </li>
             <li id="blur-conversations" class="list-group-item list-group-item-action">
                 <label class="form-check-label" for="blur-conversations--input"
-                    title='when "hide" mode is on - will hide also the chat title. default is opacity 0.2'>
+                    title='blur text messages in any open conversation. Will un-blur on hover'>
                     Blur Conversations
                 </label>
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" role="switch" id="blur-conversations--input">
+                </div>
+            </li>
+            <li id="default-hide" class="list-group-item list-group-item-action">
+                <label class="form-check-label" for="default-hide--input"
+                    title='Hide mode will be set ON by default when opening Whatsapp Web. i.e "secret button" will be pressed by default'>
+                    Default Hide
+                </label>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="default-hide--input">
                 </div>
             </li>
             <!-- <button class="list-group-item list-group-item-action">A second item</button> -->
@@ -45,6 +54,7 @@
     <script src="./hide-button.js"></script>
     <script src="./hide-chat-title-too.js"></script>
     <script src="./blur-conversation.js"></script>
+    <script src="./default-hide.js"></script>
 
 </body>
 

@@ -21,7 +21,7 @@ const headerClickIntervalId = setInterval(() => {
 
     secretBtn.textContent = "secret button";
     secretBtn.id = BtnId;
-    chrome.storage.sync.get(({ autoHideButton, hideChatTitleToo, blurConversation }) => {
+    chrome.storage.sync.get(({ autoHideButton, hideChatTitleToo, blurConversation, defaultHide }) => {
         // Auto Hide Button
         if (autoHideButton) {
             setTimeout(() => secretBtn.classList.add(OptionsClassNames.AutoHide), 100);
@@ -41,6 +41,10 @@ const headerClickIntervalId = setInterval(() => {
         }
         else document.body.classList.remove(OptionsClassNames.blurConversations)
 
+        // Default Hide
+        if (defaultHide) {
+            side.classList.add(HideClassName);
+        }
     })
 
     secretBtn.onclick = () => {

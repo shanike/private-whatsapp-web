@@ -1,7 +1,7 @@
 {
     "name": "Private WhatsApp™ Web",
     "description": "Hi! This extension hides (and reveals) WhatsApp Web's chat-list content on demand - for more privacy in WhatsApp Web.",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "icons": {
         "128": "icon128.png"
     },
