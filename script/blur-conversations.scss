@@ -1,25 +1,37 @@
-body.blur-conversations {
+html[dir="LTR"] {
 
-    // message-box(s)
+    // only when dir is LTR, we need space between: text & arrow
+    // message-text(s):
     ._1Gy50 {
         padding-left: 25px;
     }
+}
+
+@mixin blur {
+    transition: filter .2s;
+    filter: blur(4px);
+}
+
+@mixin un-blur {
+    filter: blur(0px);
+    z-index: 1000; //?
+}
+
+body.blur-conversations {
 
     // message text:
     ._1Gy50,
     // contact-name:
-    .hooVq,
+    // .hooVq,
     // quoted msg:
     .eWQsx {
         span {
-            transition: filter .2s;
-            filter: blur(4px);
+            @include blur();
         }
 
         &:hover {
             span {
-                filter: blur(0px);
-                z-index: 1000;
+                @include un-blur();
             }
         }
     }
@@ -28,6 +40,6 @@ body.blur-conversations {
     // arrow in message-box
     ._2copG,
     ._1UyGr {
-        opacity: .5;
+        opacity: .3;
     }
 }
