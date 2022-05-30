@@ -36,14 +36,13 @@
     }
 
     //: HIDE recent-msg:
-    ._1qB8f,
     ._1qB8f {
         color: transparent;
         visibility: hidden;
 
         //: HIDE emoji:
         // just ones inside recent-msg
-        .emoji {
+        img {
             display: none;
         }
     }
@@ -59,15 +58,17 @@
     }
 
     //: SHOW recent-msg (on recent-msg hover)
-    ._1qB8f:hover,
-    ._1qB8f:hover {
-        $original_text_color: var(--cell-chat-secondary-color, var(--secondary));
-        visibility: visible;
-        color: $original_text_color;
+    // hover is on `._37FrU` and not on `._1qB8f` bcos of emojis (when the recent-msg is only an emoji, hover on `._1qB8f` doesn't work)
+    ._37FrU:hover {
+        ._1qB8f {
+            $original_text_color: var(--cell-chat-secondary-color, var(--secondary));
+            visibility: visible;
+            color: $original_text_color;
 
-        // emoji
-        .emoji {
-            display: inline-block;
+            // emoji
+            img {
+                display: inline-block;
+            }
         }
     }
 

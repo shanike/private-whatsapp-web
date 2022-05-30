@@ -38,30 +38,26 @@
   transition: opacity 0.3s;
 }
 
-.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f,
 .ldL67._2i3T7 #side._1KDb8.hide ._1qB8f {
   color: transparent;
   visibility: hidden;
 }
 
-.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f .emoji,
-.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f .emoji {
+.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f img {
   display: none;
 }
 
-.ldL67._2i3T7 #side._1KDb8.hide ._3m_Xw:hover ._3vPI2,
-.ldL67._2i3T7 #side._1KDb8.hide ._3m_Xw:hover ._2EU3r {
+.ldL67._2i3T7 #side._1KDb8.hide ._2nY6U:hover ._3vPI2,
+.ldL67._2i3T7 #side._1KDb8.hide ._2nY6U:hover ._2EU3r {
   opacity: 1;
 }
 
-.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f:hover,
-.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f:hover {
+.ldL67._2i3T7 #side._1KDb8.hide ._37FrU:hover ._1qB8f {
   visibility: visible;
   color: var(--cell-chat-secondary-color, var(--secondary));
 }
 
-.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f:hover .emoji,
-.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f:hover .emoji {
+.ldL67._2i3T7 #side._1KDb8.hide ._37FrU:hover ._1qB8f img {
   display: inline-block;
 }
 
