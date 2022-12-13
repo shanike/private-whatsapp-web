@@ -9,9 +9,17 @@ const OptionsClassNames = {
     blurConversations: "blur-conversations"
 }
 
+const ALL_SELECTOR = "div#app > div:first-child > div";
+const LEFT_SELECTOR = `${ALL_SELECTOR} > div:nth-child(3)`;
+const SELECTORS = {
+    ALL: ALL_SELECTOR,
+    SIDE: `${LEFT_SELECTOR} > div:nth-child(3)`,
+    HEADER: `${LEFT_SELECTOR} > header`,
+}
+
 const headerClickIntervalId = setInterval(() => {
-    const header = document.querySelectorAll('header')[0];
-    const side = document.querySelectorAll('#side')[0];
+    const header = document.querySelectorAll(SELECTORS.HEADER)[0];
+    const side = document.querySelectorAll(SELECTORS.SIDE)[0];
     if (!header || !side) {
         return; // waiting for interval
     }

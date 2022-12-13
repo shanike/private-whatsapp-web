@@ -1,3 +1,5 @@
+@import "./selectors.scss";
+
 #chrome_extension_privateWhatsApp__btn {
     display: inline;
     background-color: #b0b0b0;
@@ -15,7 +17,7 @@
 /*************************
         on hide:
 *************************/
-.ldL67._2i3T7 #side._1KDb8.hide {
+#{$SIDE}.hide {
 
     //_ BUTTON
     #chrome_extension_privateWhatsApp__btn:not(.auto-hide) {

@@ -5,8 +5,7 @@
   border-radius: 5px;
   padding: 5px;
   opacity: 0.4;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 #chrome_extension_privateWhatsApp__btn:hover {
@@ -16,52 +15,41 @@
 /*************************
         on hide:
 *************************/
-.ldL67._2i3T7 #side._1KDb8.hide {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide {
   /********************************
-            on hide chat-title too
-    ********************************/
+          on hide chat-title too
+  ********************************/
 }
-
-.ldL67._2i3T7 #side._1KDb8.hide #chrome_extension_privateWhatsApp__btn:not(.auto-hide) {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide #chrome_extension_privateWhatsApp__btn:not(.auto-hide) {
   opacity: 1;
 }
-
-.ldL67._2i3T7 #side._1KDb8.hide ._3vPI2 {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._3vPI2 {
   opacity: 0.2;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-
-.ldL67._2i3T7 #side._1KDb8.hide ._2EU3r {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._2EU3r {
   opacity: 0.5;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-
-.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._1qB8f {
   color: transparent;
   visibility: hidden;
 }
-
-.ldL67._2i3T7 #side._1KDb8.hide ._1qB8f img {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._1qB8f img {
   display: none;
 }
-
-.ldL67._2i3T7 #side._1KDb8.hide ._2nY6U:hover ._3vPI2,
-.ldL67._2i3T7 #side._1KDb8.hide ._2nY6U:hover ._2EU3r {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._2nY6U:hover ._3vPI2,
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._2nY6U:hover ._2EU3r {
   opacity: 1;
 }
-
-.ldL67._2i3T7 #side._1KDb8.hide ._37FrU:hover ._1qB8f {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._37FrU:hover ._1qB8f {
   visibility: visible;
   color: var(--cell-chat-secondary-color, var(--secondary));
 }
-
-.ldL67._2i3T7 #side._1KDb8.hide ._37FrU:hover ._1qB8f img {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._37FrU:hover ._1qB8f img {
   display: inline-block;
 }
-
-.ldL67._2i3T7 #side._1KDb8.hide.hide-chat-title-too ._3vPI2 {
+div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide.hide-chat-title-too ._3vPI2 {
   opacity: 0;
 }
 
@@ -70,5 +58,4 @@
 *************************/
 #chrome_extension_privateWhatsApp__btn.auto-hide {
   opacity: 0;
-}
-/*# sourceMappingURL=script.css.map */
+}/*# sourceMappingURL=script.css.map */
