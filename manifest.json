@@ -1,15 +1,14 @@
 {
-    "name": "Private WhatsApp™ Web",
-    "description": "Hi! This extension hides (and reveals) WhatsApp Web's chat-list content on demand - for more privacy in WhatsApp Web.",
-    "version": "0.0.5",
+    "name": "Privacy Extension for WhatsApp Web",
+    "description": "Hi! This unofficial extension hides (and reveals) WhatsApp Web's chat-list content on demand - for more privacy in WhatsApp Web. Notice: WhatsApp is a trademark of WhatsApp Inc. registered in the U.S. and other countries. This extension is an independent project and has no relationship to WhatsApp.",
+    "version": "0.0.6",
     "icons": {
-        "128": "icon128.png"
     },
     "manifest_version": 3,
     "background": {},
     "action": {
         "default_popup": "popup/popup.html",
-        "default_title": "Private WhatsApp Web -\nClick for Options!"
+        "default_title": "Privacy for WhatsApp Web -\nClick for Options!"
     },
     "content_scripts": [
         {

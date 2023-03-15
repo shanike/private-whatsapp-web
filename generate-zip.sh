@@ -8,5 +8,4 @@ popup/default-hide.js \
 popup/popup.html \
 script/script.js \
 script/script.css \
-script/blur-conversations.css \
-icon128.png
+script/blur-conversations.css
