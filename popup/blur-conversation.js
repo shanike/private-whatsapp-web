@@ -27,11 +27,12 @@ async function updateBlurConversation() {
         function:
             () => {
                 chrome.storage.sync.get(({ blurConversation }) => {
+                    const BlurConversationsClassName = "blur-conversations";
                     if (blurConversation) {
-                        document.body.classList.add('blur-conversations');
+                        document.body.classList.add(BlurConversationsClassName);
                     }
                     else {
-                        document.body.classList.remove('blur-conversations');
+                        document.body.classList.remove(BlurConversationsClassName);
                     }
                 })
             },
