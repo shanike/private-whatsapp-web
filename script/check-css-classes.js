@@ -1,16 +1,12 @@
 const classNames = [
-    "_1Gy50", // message text
-    "eWQsx", // quoted msg
-    "_2copG", // arrow in message-box
-    "_1UyGr", // arrow in message-box
-    "ldL67",
-    "_2i3T7",
-    "_1KDb8",
-    "_3vPI2", // chat-title
-    "_2EU3r", // profiles
-    "_1qB8f", // recent-msg
-    "_2nY6U", // single chat
-    "_37FrU", // recent-msg
+    "_11JPr", // message text
+    "_37DQv", // quoted msg
+    "_1bGUW", // arrow in message-box
+    "y_sn4", // chat-title
+    "_3g4Pn", // profiles
+    "Hy9nV", // recent-msg
+    "lhggkp7q", // single chat
+    "vQ0w7", // recent-msg container
 ]
 
 const dontExist = [];

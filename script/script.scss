@@ -24,19 +24,19 @@
 
     //_ CHATS
     //: HIDE chat-title:
-    ._3vPI2 {
+    .y_sn4 {
         opacity: 0.2; //* this value is referenced in popup.html
         transition: opacity 0.3s;
     }
 
     //: HIDE profiles:
-    ._2EU3r {
+    ._3g4Pn {
         opacity: 0.5;
         transition: opacity 0.3s;
     }
 
     //: HIDE recent-msg:
-    ._1qB8f {
+    .Hy9nV {
         color: transparent;
         visibility: hidden;
 
@@ -48,19 +48,19 @@
     }
 
     //: SHOW on single chat hover
-    ._2nY6U:hover {
+    .lhggkp7q:hover {
 
         // profiles & chat-title
-        ._3vPI2,
-        ._2EU3r {
+        ._3g4Pn,
+        .y_sn4 {
             opacity: 1;
         }
     }
 
-    //: SHOW recent-msg (on recent-msg hover)
-    // hover is on `._37FrU` and not on `._1qB8f` bcos of emojis (when the recent-msg is only an emoji, hover on `._1qB8f` doesn't work)
-    ._37FrU:hover {
-        ._1qB8f {
+    //: SHOW recent-msg (on recent-msg container hover)
+    // hover is on `.vQ0w7` and not on `.Hy9nV` bcos of emojis (when the recent-msg is only an emoji, hover on `.Hy9nV` doesn't work)
+    .vQ0w7:hover {
+        .Hy9nV {
             $original_text_color: var(--cell-chat-secondary-color, var(--secondary));
             visibility: visible;
             color: $original_text_color;
@@ -77,7 +77,7 @@
     ********************************/
     //: HIDE chat-title:
     &.hide-chat-title-too {
-        ._3vPI2 {
+        .y_sn4 {
             opacity: 0;
         }
     }

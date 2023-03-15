@@ -23,33 +23,33 @@
 #side.hide #chrome_extension_privateWhatsApp__btn:not(.auto-hide) {
   opacity: 1;
 }
-#side.hide ._3vPI2 {
-  opacity: 0.2;
+#side.hide .y_sn4 {
+  opacity: 0.4;
   transition: opacity 0.3s;
 }
-#side.hide ._2EU3r {
+#side.hide ._3g4Pn {
   opacity: 0.5;
   transition: opacity 0.3s;
 }
-#side.hide ._1qB8f {
+#side.hide .Hy9nV {
   color: transparent;
   visibility: hidden;
 }
-#side.hide ._1qB8f img {
+#side.hide .Hy9nV img {
   display: none;
 }
-#side.hide ._2nY6U:hover ._3vPI2,
-#side.hide ._2nY6U:hover ._2EU3r {
+#side.hide .lhggkp7q:hover ._3g4Pn,
+#side.hide .lhggkp7q:hover .y_sn4 {
   opacity: 1;
 }
-#side.hide ._37FrU:hover ._1qB8f {
+#side.hide .vQ0w7:hover .Hy9nV {
   visibility: visible;
   color: var(--cell-chat-secondary-color, var(--secondary));
 }
-#side.hide ._37FrU:hover ._1qB8f img {
+#side.hide .vQ0w7:hover .Hy9nV img {
   display: inline-block;
 }
-#side.hide.hide-chat-title-too ._3vPI2 {
+#side.hide.hide-chat-title-too .y_sn4 {
   opacity: 0;
 }
 
