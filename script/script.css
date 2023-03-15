@@ -15,41 +15,41 @@
 /*************************
         on hide:
 *************************/
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide {
+#side.hide {
   /********************************
           on hide chat-title too
   ********************************/
 }
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide #chrome_extension_privateWhatsApp__btn:not(.auto-hide) {
+#side.hide #chrome_extension_privateWhatsApp__btn:not(.auto-hide) {
   opacity: 1;
 }
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._3vPI2 {
+#side.hide ._3vPI2 {
   opacity: 0.2;
   transition: opacity 0.3s;
 }
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._2EU3r {
+#side.hide ._2EU3r {
   opacity: 0.5;
   transition: opacity 0.3s;
 }
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._1qB8f {
+#side.hide ._1qB8f {
   color: transparent;
   visibility: hidden;
 }
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._1qB8f img {
+#side.hide ._1qB8f img {
   display: none;
 }
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._2nY6U:hover ._3vPI2,
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._2nY6U:hover ._2EU3r {
+#side.hide ._2nY6U:hover ._3vPI2,
+#side.hide ._2nY6U:hover ._2EU3r {
   opacity: 1;
 }
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._37FrU:hover ._1qB8f {
+#side.hide ._37FrU:hover ._1qB8f {
   visibility: visible;
   color: var(--cell-chat-secondary-color, var(--secondary));
 }
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide ._37FrU:hover ._1qB8f img {
+#side.hide ._37FrU:hover ._1qB8f img {
   display: inline-block;
 }
-div#app > div:first-child > div > div:nth-child(3) > div:nth-child(3).hide.hide-chat-title-too ._3vPI2 {
+#side.hide.hide-chat-title-too ._3vPI2 {
   opacity: 0;
 }
 

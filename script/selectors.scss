@@ -1,6 +1,0 @@
-$ALL_SELECTOR: "div#app > div:first-child > div";
-$LEFT_SELECTOR: "#{$ALL_SELECTOR} > div:nth-child(3)";
-$SIDE: "#{$LEFT_SELECTOR} > div:nth-child(3)";
-$CHAT: "#{$ALL_SELECTOR} > div:nth-child(4) > div#main > div:nth-child(4)";
-$MESSAGE_BOX : "#{$CHAT} > div:first-child > div:nth-child(3) > div:nth-child(3) > div[role=row]";
-$MESSAGE_TEXT: "#{$MESSAGE_BOX} > div:first-child > div:nth-child(2) > div:first-child > div:nth-child(2) > div:first-child > div:first-child"
