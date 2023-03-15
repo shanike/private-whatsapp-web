@@ -17,31 +17,39 @@ html[dir="LTR"] {
     z-index: 1000; //?
 }
 
-body.blur-conversations {
-
-    // message text:
-    ._11JPr,
-    // contact-name:
-    ._3IzYj,
-    // quoted msg:
-    ._37DQv,
-    // image:
-    .lhggkp7q img {
-        span {
-            @include blur();
-        }
-
-        &:hover {
-            span {
-                @include un-blur();
-            }
-        }
+@mixin blur-on-hover($element) {
+    #{$element} {
+        @include blur();
     }
 
+    &:hover {
+        #{$element} {
+            @include un-blur();
+        }
+    }
+}
 
-    // arrow in message-box
-    // ._3e9My,
-    ._1bGUW {
-        opacity: .3;
+body.blur-conversations {
+    #main {
+
+        // message text:
+        ._11JPr,
+        // contact-name:
+        ._3IzYj,
+        // quoted msg:
+        ._37DQv {
+            @include blur-on-hover(span);
+        }
+
+        // image:
+        .lhggkp7q {
+            @include blur-on-hover(img);
+        }
+
+
+        // arrow in message-box
+        ._1bGUW {
+            opacity: .3;
+        }
     }
 }

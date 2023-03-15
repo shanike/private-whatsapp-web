@@ -2,20 +2,26 @@ html[dir=LTR] ._1Gy50 {
   padding-left: 25px;
 }
 
-body.blur-conversations ._11JPr span,
-body.blur-conversations ._3IzYj span,
-body.blur-conversations ._37DQv span,
-body.blur-conversations .lhggkp7q img span {
+body.blur-conversations #main ._11JPr span,
+body.blur-conversations #main ._3IzYj span,
+body.blur-conversations #main ._37DQv span {
   transition: filter 0.2s;
   filter: blur(4px);
 }
-body.blur-conversations ._11JPr:hover span,
-body.blur-conversations ._3IzYj:hover span,
-body.blur-conversations ._37DQv:hover span,
-body.blur-conversations .lhggkp7q img:hover span {
+body.blur-conversations #main ._11JPr:hover span,
+body.blur-conversations #main ._3IzYj:hover span,
+body.blur-conversations #main ._37DQv:hover span {
   filter: blur(0px);
   z-index: 1000;
 }
-body.blur-conversations ._1bGUW {
+body.blur-conversations #main .lhggkp7q img {
+  transition: filter 0.2s;
+  filter: blur(4px);
+}
+body.blur-conversations #main .lhggkp7q:hover img {
+  filter: blur(0px);
+  z-index: 1000;
+}
+body.blur-conversations #main ._1bGUW {
   opacity: 0.3;
 }/*# sourceMappingURL=blur-conversations.css.map */
