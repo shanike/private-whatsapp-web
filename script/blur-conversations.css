@@ -1,26 +1,21 @@
-html[dir="LTR"] ._1Gy50 {
+html[dir=LTR] ._1Gy50 {
   padding-left: 25px;
 }
 
-body.blur-conversations ._1Gy50 span,
-body.blur-conversations .eWQsx span {
-  -webkit-transition: -webkit-filter .2s;
-  transition: -webkit-filter .2s;
-  transition: filter .2s;
-  transition: filter .2s, -webkit-filter .2s;
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+body.blur-conversations ._11JPr span,
+body.blur-conversations ._3IzYj span,
+body.blur-conversations ._37DQv span,
+body.blur-conversations .lhggkp7q img span {
+  transition: filter 0.2s;
+  filter: blur(4px);
 }
-
-body.blur-conversations ._1Gy50:hover span,
-body.blur-conversations .eWQsx:hover span {
-  -webkit-filter: blur(0px);
-          filter: blur(0px);
+body.blur-conversations ._11JPr:hover span,
+body.blur-conversations ._3IzYj:hover span,
+body.blur-conversations ._37DQv:hover span,
+body.blur-conversations .lhggkp7q img:hover span {
+  filter: blur(0px);
   z-index: 1000;
 }
-
-body.blur-conversations ._2copG,
-body.blur-conversations ._1UyGr {
-  opacity: .3;
-}
-/*# sourceMappingURL=blur-conversations.css.map */
+body.blur-conversations ._1bGUW {
+  opacity: 0.3;
+}/*# sourceMappingURL=blur-conversations.css.map */
