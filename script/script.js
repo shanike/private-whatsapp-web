@@ -1,8 +1,8 @@
-// set interval and clear it when WhatsApp finally loaded all elements to the DOM...
+// set interval and clear it when site finally loaded all elements to the DOM...
 // this function added on on-click functionality of hiding/revealing the chat list content.
 
 const HideClassName = "hide";
-const BtnId = "chrome_extension_privateWhatsApp__btn"; // used in popup/*.js too! (and in script.css obviously)
+const BtnId = "chrome_extension_privateChats__btn"; // used in popup/*.js too! (and in script.css obviously)
 const OptionsClassNames = {
     AutoHide: "auto-hide",
     HideChatTitleToo: "hide-chat-title-too",
@@ -53,14 +53,3 @@ const headerClickIntervalId = setInterval(() => {
 
     clearInterval(headerClickIntervalId)
 }, 100);
-
-
-// * not in use
-// const blurChatInterval = setInterval(() => {
-//     const el = document.querySelectorAll('header ._1yNrt ._1QVfy')[0];
-//     const blurChatBtn = document.createElement('button');
-//     blurChatBtn.id = "chrome_extension_privateWhatsApp__blur-chat-button";
-//     blurChatBtn.textContent = "hide messages";
-//     el.appendChild(blurChatBtn);
-//     clearInterval(blurChatInterval);
-// }, 100);

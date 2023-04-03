@@ -1,4 +1,4 @@
-#chrome_extension_privateWhatsApp__btn {
+#chrome_extension_privateChats__btn {
     display: inline;
     background-color: #b0b0b0;
     margin: 0 10px;
@@ -8,7 +8,7 @@
     transition: opacity .3s;
 }
 
-#chrome_extension_privateWhatsApp__btn:hover {
+#chrome_extension_privateChats__btn:hover {
     opacity: 0.7 !important;
 }
 
@@ -18,7 +18,7 @@
 #side.hide {
 
     //_ BUTTON
-    #chrome_extension_privateWhatsApp__btn:not(.auto-hide) {
+    #chrome_extension_privateChats__btn:not(.auto-hide) {
         opacity: 1;
     }
 
@@ -87,6 +87,6 @@
 /*************************
         on hide button
 *************************/
-#chrome_extension_privateWhatsApp__btn.auto-hide {
+#chrome_extension_privateChats__btn.auto-hide {
     opacity: 0;
 }
