@@ -2,4 +2,5 @@ info.md
 todo.md
 
 *.png
+!icon128.png
 *.mp4

@@ -1,8 +1,9 @@
 {
-    "name": "Privacy Extension for your personal chat list",
-    "description": "Hi! This unofficial extension hides (and reveals) chat list content on demand - for more privacy.",
+    "name": "Privacy extension for your personal chat list",
+    "description": "Hi! To enhance privacy, this unofficial extension offers the ability to blur or hide chat list content.",
     "version": "0.0.1",
     "icons": {
+        "128": "icon128.png"
     },
     "manifest_version": 3,
     "background": {},

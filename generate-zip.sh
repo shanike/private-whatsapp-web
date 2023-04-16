@@ -1,5 +1,6 @@
 zip ext.zip \
 manifest.json \
+icon128.png \
 popup/blur-conversation.js \
 popup/default-hide.js \
 popup/hide-button.js \
