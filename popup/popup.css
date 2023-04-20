@@ -1,12 +1,12 @@
-#shani--extension-privateWhatsAppWeb {
+#popup--chrome_extension_privateChats__btn {
   width: -moz-max-content;
   width: max-content;
   max-width: 350px;
 }
-#shani--extension-privateWhatsAppWeb .shani--ul li {
+#popup--chrome_extension_privateChats__btn .shani--ul li {
   display: flex;
   flex-direction: row;
 }
-#shani--extension-privateWhatsAppWeb .shani--ul li label {
+#popup--chrome_extension_privateChats__btn .shani--ul li label {
   margin-right: 10px;
 }/*# sourceMappingURL=popup.css.map */

@@ -10,3 +10,4 @@ popup/popup.html \
 script/blur-conversations.css \
 script/script.js \
 script/script.css \
+# rememeber to compile the .scss to .css !!!
