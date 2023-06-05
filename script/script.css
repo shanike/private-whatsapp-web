@@ -31,22 +31,26 @@
   opacity: 0.5;
   transition: opacity 0.3s;
 }
-#side.hide .Hy9nV {
+#side.hide .Hy9nV,
+#side.hide .vQ0w7 {
   color: transparent;
   visibility: hidden;
 }
-#side.hide .Hy9nV img {
+#side.hide .Hy9nV img,
+#side.hide .vQ0w7 img {
   display: none;
 }
 #side.hide .lhggkp7q:hover ._3g4Pn,
 #side.hide .lhggkp7q:hover .y_sn4 {
   opacity: 1;
 }
-#side.hide .vQ0w7:hover .Hy9nV {
+#side.hide .vQ0w7:hover .Hy9nV,
+#side.hide .vQ0w7:hover .vQ0w7 {
   visibility: visible;
   color: var(--cell-chat-secondary-color, var(--secondary));
 }
-#side.hide .vQ0w7:hover .Hy9nV img {
+#side.hide .vQ0w7:hover .Hy9nV img,
+#side.hide .vQ0w7:hover .vQ0w7 img {
   display: inline-block;
 }
 #side.hide.hide-chat-title-too .y_sn4 {

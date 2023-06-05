@@ -36,7 +36,9 @@
     }
 
     //: HIDE recent-msg:
-    .Hy9nV {
+    // .vQ0w7 recent-msg on mac?
+    .Hy9nV,
+    .vQ0w7 {
         color: transparent;
         visibility: hidden;
 
@@ -60,7 +62,9 @@
     //: SHOW recent-msg (on recent-msg container hover)
     // hover is on `.vQ0w7` and not on `.Hy9nV` bcos of emojis (when the recent-msg is only an emoji, hover on `.Hy9nV` doesn't work)
     .vQ0w7:hover {
-        .Hy9nV {
+
+        .Hy9nV,
+        .vQ0w7 {
             $original_text_color: var(--cell-chat-secondary-color, var(--secondary));
             visibility: visible;
             color: $original_text_color;
