@@ -44,13 +44,11 @@
 #side.hide .lhggkp7q:hover .y_sn4 {
   opacity: 1;
 }
-#side.hide .vQ0w7:hover .Hy9nV,
-#side.hide .vQ0w7:hover .vQ0w7 {
+#side.hide .vQ0w7:hover .Hy9nV, #side.hide .vQ0w7:hover {
   visibility: visible;
   color: var(--cell-chat-secondary-color, var(--secondary));
 }
-#side.hide .vQ0w7:hover .Hy9nV img,
-#side.hide .vQ0w7:hover .vQ0w7 img {
+#side.hide .vQ0w7:hover .Hy9nV img, #side.hide .vQ0w7:hover img {
   display: inline-block;
 }
 #side.hide.hide-chat-title-too .y_sn4 {
