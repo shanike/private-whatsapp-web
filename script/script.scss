@@ -36,7 +36,7 @@
     }
 
     //: HIDE recent-msg:
-    // .vQ0w7 recent-msg on mac?
+    // .vQ0w7 recent-msg
     .Hy9nV,
     .vQ0w7 {
         color: transparent;
@@ -64,7 +64,7 @@
     .vQ0w7:hover {
 
         .Hy9nV,
-        .vQ0w7 {
+        & {
             $original_text_color: var(--cell-chat-secondary-color, var(--secondary));
             visibility: visible;
             color: $original_text_color;
